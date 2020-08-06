@@ -34,29 +34,28 @@ router.beforeEach(async (to, from, next) => {
       if (store.getters.roles.length === 0) {
         try {
           store.dispatch('getInfo').then(res => {
-            const { listRoles } = res;
+            const { listRoles } = res
             // 提取角色
             const roles = []
             listRoles.forEach(item => {
               roles.push(item.roleName)
             })
             // console.log('roles', roles)
-            store.dispatch('GenerateRoutes', {roles}).then(() => {
-              router.addRoutes(store.getters.addRouters);
-              next({...to, replace: true});
-            });
-          });
-          next();
+            store.dispatch('GenerateRoutes', { roles }).then(() => {
+              router.addRoutes(store.getters.addRouters)
+              next({ ...to, replace: true })
+            })
+          })
+          next()
         } catch (err) {
-          await store.dispatch('resetToken');
-          Message.error('没有权限，请重新登录');
-          next('/login');
-          NProgress.done();
+          await store.dispatch('resetToken')
+          Message.error('没有权限，请重新登录')
+          next('/login')
+          NProgress.done()
         }
       } else {
-        next();
+        next()
       }
-
     }
   } else {
     // has no token

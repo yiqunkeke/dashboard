@@ -6,7 +6,7 @@ const fireRouter = {
   meta: {
     title: '消防系统',
     icon: 'xiaofang',
-    roles: ['营地管理员','道闸管理员','超级管理员']
+    roles: ['营地管理员', '道闸管理员', '超级管理员']
   },
   children: [
     {
@@ -19,7 +19,7 @@ const fireRouter = {
         icon: 'xiaofang',
         breadcrumb: false
       }
-    },
+    }
     // {
     //   path: 'test3',
     //   component: function (resolve) {

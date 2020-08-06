@@ -1,7 +1,7 @@
 import axios from 'axios'
 import store from '@/store'
 import { Message } from 'element-ui'
-import router from '@/router'
+// import router from '@/router'
 
 const service = axios.create({
   baseURL: '',
@@ -11,11 +11,11 @@ const service = axios.create({
 // 添加请求拦截器
 service.interceptors.request.use(function (config) {
   // 在发送请求之前做些什么
-  let isPrivate = config.url.includes('private')
-  let userToken = store.getters.token
-  let userId = store.getters.userId
-  let systemCode = store.getters.systemCode
-  if(isPrivate) {
+  const isPrivate = config.url.includes('private')
+  const userToken = store.getters.token
+  const userId = store.getters.userId
+  const systemCode = store.getters.systemCode
+  if (isPrivate) {
     if (userToken && userId && systemCode) {
       config.headers.userToken = userToken
       config.headers.userId = userId

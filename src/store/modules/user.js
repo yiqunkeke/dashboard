@@ -47,9 +47,9 @@ const actions = {
   login ({ commit }, { systemCode, userName, password }) {
     const pwd = md5(password)
     return new Promise((resolve, reject) => {
-      login(systemCode, userName, pwd )
+      login(systemCode, userName, pwd)
         .then(res => {
-          console.log('login',res)
+          console.log('login', res)
           const { userToken, userId, systemName, systemCode } = res
           commit('SET_TOKEN', userToken)
           commit('SET_USER_ID', userId)
@@ -60,7 +60,7 @@ const actions = {
           setStorage('userId', userId)
           setStorage('systemName', systemName)
           setStorage('systemCode', systemCode)
-          
+
           resolve()
         })
         .catch(err => {
@@ -74,7 +74,7 @@ const actions = {
     return new Promise((resolve, reject) => {
       // userId, userToken, systemCode
       getInfo(state.userId, state.token, state.systemCode).then(res => {
-        const { email, listPrivileges, listRoles, phone, systemCode, userName } = res
+        const { listRoles, userName } = res
         console.log('userinfo', res)
         commit('SET_USER_NAME', userName)
         // 提取角色

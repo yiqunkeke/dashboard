@@ -6,7 +6,7 @@ const securityRouter = {
   meta: {
     title: '安防系统',
     icon: 'anfangguanli',
-    roles: ['营地管理员','道闸管理员','超级管理员']
+    roles: ['营地管理员', '道闸管理员', '超级管理员']
   },
   children: [
     {
@@ -19,7 +19,7 @@ const securityRouter = {
         icon: 'anfangguanli',
         breadcrumb: false
       }
-    },
+    }
     // {
     //   path: 'test5',
     //   component: function (resolve) {

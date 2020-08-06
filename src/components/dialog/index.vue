@@ -8,7 +8,7 @@
       :close-on-press-escape="false"
       @closed="handleCancel"
       >
-      <slot></slot>     
+      <slot></slot>
       <span slot="footer" class="dialog-footer">
         <el-button @click="handleCancel" size="mini">取 消</el-button>
         <el-button @click="handleConfirm" type="primary" size="mini">确 定</el-button>
@@ -18,30 +18,30 @@
 
 <script>
 export default {
-    props: {
-        dialogVisible: {
-            type: Boolean,
-            default: false
-        }
-    },
-    data() {
-        return {
-            visible: this.dialogVisible
-        }
-    },
-    watch: {
-        dialogVisible(val) {
-            this.visible = val
-        }
-    },
-    methods: {
-        handleCancel() {
-            this.$emit('cancel')
-        },
-        handleConfirm() {
-            this.$emit('confirm')
-        }
+  props: {
+    dialogVisible: {
+      type: Boolean,
+      default: false
     }
+  },
+  data () {
+    return {
+      visible: this.dialogVisible
+    }
+  },
+  watch: {
+    dialogVisible (val) {
+      this.visible = val
+    }
+  },
+  methods: {
+    handleCancel () {
+      this.$emit('cancel')
+    },
+    handleConfirm () {
+      this.$emit('confirm')
+    }
+  }
 }
 </script>
 

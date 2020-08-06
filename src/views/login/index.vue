@@ -15,10 +15,10 @@
         <el-form :model="form" class="login-form" :rules="rules" ref="form">
           <el-form-item prop="systemCode">
             <el-select v-model="form.systemCode" placeholder="请选择营地">
-              <el-option 
-                :label="camp.systemName" 
-                :value="camp.systemCode" 
-                v-for="camp in camps" 
+              <el-option
+                :label="camp.systemName"
+                :value="camp.systemCode"
+                v-for="camp in camps"
                 :key="camp.systemCode">
               </el-option>
             </el-select>
@@ -65,14 +65,14 @@ export default {
       camps: []
     }
   },
-  mounted() {
+  mounted () {
     this.getCampList()
   },
   methods: {
     // 获取营地列表
-    async getCampList() {
-      let res = await campList()
-      console.log(res);
+    async getCampList () {
+      const res = await campList()
+      console.log(res)
       this.camps = res
     },
     // 登录

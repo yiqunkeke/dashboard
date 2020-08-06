@@ -44,7 +44,7 @@ export const asyncRouter = [
 
 // https://github.com/vuejs/vue-router/issues/1234#issuecomment-357941465
 const createRouter = () => new VueRouter({
-  mode: 'history',  // history模式只支持前进，后退，跳转操作
+  mode: 'history', // history模式只支持前进，后退，跳转操作
   scrollBehavior: () => ({ y: 0 }),
   routes: constantRoutes
 })

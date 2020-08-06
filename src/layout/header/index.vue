@@ -25,8 +25,8 @@
         </el-dropdown>
       </el-col>
     </el-row>
-    <dialogCom 
-      :dialogVisible="dialogVisible" 
+    <dialogCom
+      :dialogVisible="dialogVisible"
       @cancel="handleCancel"
       @confirm="handleConfirm">
         <el-form :model="form" :rules="rules" label-width="100px" ref="form">
@@ -57,9 +57,9 @@ export default {
     dialogCom
   },
   computed: {
-    ...mapGetters(['username','systemName'])
+    ...mapGetters(['username', 'systemName'])
   },
-  data() {
+  data () {
     return {
       dialogVisible: false,
       form: {
@@ -81,38 +81,38 @@ export default {
     }
   },
   methods: {
-    handleCommand(command) {
+    handleCommand (command) {
       // console.log(command)
-      if(command === 'logout') {
+      if (command === 'logout') {
         this.$store.dispatch('logout')
-        .then(() => {
-          this.$router.push({
-            path: '/login'
+          .then(() => {
+            this.$router.push({
+              path: '/login'
+            })
           })
-        })
       }
-      if(command === 'updatePwd') {
+      if (command === 'updatePwd') {
         this.dialogVisible = true
       }
     },
-    handleCancel() {
+    handleCancel () {
       this.dialogVisible = false
     },
     // 修改密码确认
-    handleConfirm() {
-      this.$refs['form'].validate(async (valid) => {
+    handleConfirm () {
+      this.$refs.form.validate(async (valid) => {
         if (valid) {
-          if(this.form.newPwd !== this.form.newPwdConfirm) {
+          if (this.form.newPwd !== this.form.newPwdConfirm) {
             this.$message.error('新密码两次输入不一致')
             return
           }
-          let oldPwd = md5(this.form.oldPwd)
-          let newPwd = md5(this.form.newPwd)
-          let res = await updataPwd(oldPwd, newPwd)
+          const oldPwd = md5(this.form.oldPwd)
+          const newPwd = md5(this.form.newPwd)
+          await updataPwd(oldPwd, newPwd)
           this.$message({
-              message: '修改密码成功，请重新登录',
-              type: 'success'
-          });
+            message: '修改密码成功，请重新登录',
+            type: 'success'
+          })
           this.dialogVisible = false
           this.$store.dispatch('logout')
           this.$router.push('/login')
