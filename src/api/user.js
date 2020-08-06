@@ -10,31 +10,42 @@ export function campList () {
 }
 
 // 用户登录
-export function login (data) {
+export function login (systemCode, userName, password) {
   return request({
     url: `${baseApi.API_URL}/user/public/login`,
     method: 'post',
-    data
+    data: {
+      systemCode,
+      userName,
+      password
+    }
   })
 }
 
 // 获取用户信息
-export function getInfo (userId, userToken, systemCode) {
+export function getInfo () {
   return request({
     url: `${baseApi.API_URL}/user/private/userInfo`,
+    method: 'post'
+  })
+}
+
+// 修改密码
+export function updataPwd (oldPwd, newPwd) {
+  return request({
+    url: `${baseApi.API_URL}/user/private/updatePwd`,
     method: 'post',
-    headers: {
-      userId,
-      userToken,
-      systemCode
+    data: {
+      oldPwd,
+      newPwd
     }
   })
 }
 
 // 用户登出
-export function logout () {
-  return request({
-    url: `${baseApi.API_URL}/user/logout`,
-    method: 'post'
-  })
-}
+// export function logout () {
+//   return request({
+//     url: `${baseApi.API_URL}/user/logout`,
+//     method: 'post'
+//   })
+// }

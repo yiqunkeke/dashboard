@@ -4,6 +4,7 @@ import layout from '@/layout'
 import comprehensiveRouter from './modules/comprehensive'
 import fireRouter from './modules/fire'
 import securityRouter from './modules/security'
+import operationRouter from './modules/operation'
 
 Vue.use(VueRouter)
 
@@ -37,13 +38,13 @@ export const constantRoutes = [
 export const asyncRouter = [
   comprehensiveRouter,
   fireRouter,
-  securityRouter
+  securityRouter,
+  operationRouter
 ]
 
 // https://github.com/vuejs/vue-router/issues/1234#issuecomment-357941465
 const createRouter = () => new VueRouter({
   mode: 'history',  // history模式只支持前进，后退，跳转操作
-  // mode: 'hash', // hash模式支持前进，后退，跳转，刷新操作
   scrollBehavior: () => ({ y: 0 }),
   routes: constantRoutes
 })

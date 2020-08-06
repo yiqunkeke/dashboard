@@ -3,7 +3,7 @@
       <vue-scroll>
         <el-menu
           class="menu"
-          default-active="1-1"
+          :default-active="this.$route.path"
           background-color="#2d3037"
           text-color="#cccaca"
           active-text-color="#409eff"
@@ -79,6 +79,7 @@ export default {
     .menu {
       width: 150px;
       border-right: none;
+      padding-top: 10px;
     }
   }
 </style>

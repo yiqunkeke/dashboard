@@ -2,13 +2,13 @@ import { login, getInfo } from '@/api/user'
 import { getToken, setToken, removeToken } from '@/utils/token'
 import { resetRouter } from '@/router'
 import { setStorage, getStorage, clearStorage } from '@/utils/storage'
-// import md5 from 'js-md5'
+import md5 from 'js-md5'
 
 const getDefaultState = () => {
   return {
     token: getToken(),
     userId: getStorage('userId'), // 用户id
-    systemName: '', // 营地名称
+    systemName: getStorage('systemName'), // 营地名称
     systemCode: getStorage('systemCode'), // 营地号
     username: '', // 用户名
     roles: [] // 角色
@@ -45,9 +45,9 @@ const actions = {
 
   // 登录-获取token
   login ({ commit }, { systemCode, userName, password }) {
-    // const pwd = md5(password)
+    const pwd = md5(password)
     return new Promise((resolve, reject) => {
-      login({ systemCode, userName, password })
+      login(systemCode, userName, pwd )
         .then(res => {
           console.log('login',res)
           const { userToken, userId, systemName, systemCode } = res
@@ -58,7 +58,9 @@ const actions = {
 
           setToken(userToken)
           setStorage('userId', userId)
+          setStorage('systemName', systemName)
           setStorage('systemCode', systemCode)
+          
           resolve()
         })
         .catch(err => {
@@ -72,7 +74,7 @@ const actions = {
     return new Promise((resolve, reject) => {
       // userId, userToken, systemCode
       getInfo(state.userId, state.token, state.systemCode).then(res => {
-        const { email, listPrivileges, listRoles, phone, userName } = res
+        const { email, listPrivileges, listRoles, phone, systemCode, userName } = res
         console.log('userinfo', res)
         commit('SET_USER_NAME', userName)
         // 提取角色

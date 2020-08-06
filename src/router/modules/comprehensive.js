@@ -6,7 +6,7 @@ const comprehensiveRouter = {
   meta: {
     title: '综合态势',
     icon: 'tubiao',
-    roles: ['营地管理员','道闸管理员']
+    roles: ['营地管理员','道闸管理员','超级管理员']
   },
   children: [
     {
