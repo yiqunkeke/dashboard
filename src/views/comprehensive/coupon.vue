@@ -2,10 +2,10 @@
   <div class="box">
       <h1>
         <i></i>
-        <span>天气预报</span>
+        <span>券核销率</span>
       </h1>
       <div>
-        {{weather}}
+        {{coupon}}
       </div>
   </div>
 </template>
@@ -13,7 +13,7 @@
 <script>
 export default {
   props: {
-    weather: {
+    coupon: {
       type: Object,
       default: () => {
         return {}

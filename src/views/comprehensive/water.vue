@@ -2,10 +2,10 @@
   <div class="box">
       <h1>
         <i></i>
-        <span>天气预报</span>
+        <span>全国水力监控</span>
       </h1>
       <div>
-        {{weather}}
+        {{water}}
       </div>
   </div>
 </template>
@@ -13,7 +13,7 @@
 <script>
 export default {
   props: {
-    weather: {
+    water: {
       type: Object,
       default: () => {
         return {}

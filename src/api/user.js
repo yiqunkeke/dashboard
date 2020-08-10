@@ -41,11 +41,3 @@ export function updataPwd (oldPwd, newPwd) {
     }
   })
 }
-
-// 用户登出
-// export function logout () {
-//   return request({
-//     url: `${baseApi.API_URL}/user/logout`,
-//     method: 'post'
-//   })
-// }

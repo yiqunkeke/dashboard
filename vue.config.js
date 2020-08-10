@@ -28,6 +28,14 @@ module.exports = {
         pathRewrite: {
           '^/api': '/user-auth-api'
         }
+      },
+      // 综合态势
+      '/camp-kanban-api': {
+        target: 'http://10.138.130.1:32894',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/camp-kanban-api': '/camp-kanban-api'
+        }
       }
     }
   }
