@@ -6,8 +6,8 @@
         <div class="login-title">
           <i class="iconfont icon-shuju"></i>
           <h1>
-            智 慧 园 区 数 据 看 板
-            <em>smart park data display</em>
+            智 慧 园 区 数 据 平 台
+            <em>smart park data platform</em>
           </h1>
         </div>
 

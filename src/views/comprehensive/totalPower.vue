@@ -7,6 +7,7 @@
       <div>
         {{total}}
       </div>
+      <div ref="chart" :style="{width: '100%', height: '300px'}"></div>
   </div>
 </template>
 
@@ -18,6 +19,44 @@ export default {
       default: () => {
         return {}
       }
+    }
+  },
+  mounted () {
+    this.drawLine();
+  },
+  methods: {
+    drawLine() {
+      const chart = this.$refs.chart
+      if (chart) {
+        const myChart = this.$echarts.init(chart)
+        const option = {
+          xAxis: {
+              type: 'category',
+              data: ['01月', '02月', '03月', '04月', '05月', '06月', '07月', '08月', '09月', '10月', '11月', '12月']
+          },
+          yAxis: {
+              type: 'value'
+          },
+          barWidth:25,
+          series: [{
+              data: [120, 200, 150, 80, 70, 110, 130, 120, 200, 150, 80, 70],
+              type: 'bar',
+              showBackground: false,
+              backgroundStyle: {
+                  color: 'rgba(220, 220, 220, 0.8)'
+              }
+          }]
+        };
+        myChart.setOption(option)
+        window.addEventListener("resize", function() {
+          myChart.resize()
+        })
+      }
+       this.$on('hook:destroyed',()=>{
+         window.removeEventListener("resize", function() {
+          myChart.resize();
+        });
+        })
     }
   }
 }

@@ -34,7 +34,7 @@ export default {
     couponComp,
     totalPowerComp
   },
-  data() {
+  data () {
     return {
       weather: {},
       electric: {},
@@ -43,7 +43,7 @@ export default {
       totalPower: {}
     }
   },
-  mounted() {
+  mounted () {
     this.getWeather()
     this.getElectric()
     this.getWater()
@@ -52,23 +52,23 @@ export default {
   },
   methods: {
     // 获取天气
-    async getWeather() {
+    async getWeather () {
       this.weather = await weatherData()
     },
     // 全国电力监控
-    async getElectric() {
+    async getElectric () {
       this.electric = await electricData()
     },
     // 全国水力监控
-    async getWater() {
+    async getWater () {
       this.water = await waterData()
     },
     // 券核销率
-    async getCoupon() {
+    async getCoupon () {
       this.coupon = await couponData()
     },
     // 总能耗
-    async getTotalPower() {
+    async getTotalPower () {
       this.totalPower = await totalPowerData()
     }
   }

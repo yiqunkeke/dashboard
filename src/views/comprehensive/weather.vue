@@ -1,11 +1,16 @@
 <template>
   <div class="box">
       <h1>
-        <i></i>
+        <i class="iconfont icon--"></i>
         <span>天气预报</span>
       </h1>
-      <div>
-        {{weather}}
+      <div class="box-wrapper">
+        <p>
+        温度：<em>{{wea.temperature}}</em>℃
+        </p>
+        <p>
+        湿度：<em>{{wea.humidity}}</em>%
+        </p>
       </div>
   </div>
 </template>
@@ -19,6 +24,16 @@ export default {
         return {}
       }
     }
+  },
+  data () {
+    return {
+      wea: this.weather
+    }
+  },
+  watch: {
+    weather (val) {
+      this.wea = val
+    }
   }
 }
 </script>
@@ -31,7 +46,7 @@ export default {
     border-radius: 3px;
     margin-bottom: 10px;
     h1 {
-      color: #333;
+      color: $gray-3;
       font-size: 14px;
       font-weight: normal;
       display: flex;
@@ -39,12 +54,25 @@ export default {
       padding-left: 10px;
       padding-right: 10px;
       i {
-        display: block;
-        width: 3px;
-        height: 16px;
-        background: #ccc;
-        border-radius: 1px;
-        margin-right: 8px;
+        color: $light;
+        font-size: 20px;
+      }
+    }
+    .box-wrapper {
+      display: flex;
+      justify-content: flex-start;
+      padding-left: 30px;
+      padding-right: 30px;
+      p {
+        font-size: 12px;
+        color: $gray-9;
+        margin-right: 25px;
+        em {
+          font-size: 20px;
+          color: $gray-3;
+          font-family: Arial, Helvetica, sans-serif;
+          font-style: normal;
+        }
       }
     }
   }

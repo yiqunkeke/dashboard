@@ -4,8 +4,8 @@
       <el-col :span="12" class="header-logo">
         <img src="../../assets/logo.png">
         <h1>
-          <strong>智慧园区数据看板</strong>
-          <em>smart park data display</em>
+          <strong>智慧园区数据平台</strong>
+          <em>smart park data platform</em>
         </h1>
         <h2>{{systemName}}</h2>
       </el-col>

@@ -6,7 +6,7 @@ module.exports = {
     config
       .plugin('html')
       .tap(args => {
-        args[0].title = '智慧园区数据看板'
+        args[0].title = '智慧园区数据平台'
         return args
       })
   },

@@ -1,11 +1,22 @@
 <template>
   <div class="box">
       <h1>
-        <i></i>
+        <i class="iconfont icon-shandian"></i>
         <span>全国电力监控</span>
       </h1>
-      <div>
-        {{electric}}
+      <div class="box-wrapper">
+        <div class="inner">
+          <p>{{ele.todayElectricity}}</p>
+          <span>今日用电</span>
+        </div>
+        <div class="inner">
+          <p>{{ele.monthElectricity}}</p>
+          <span>本月用电</span>
+        </div>
+        <div class="inner">
+          <p>{{ele.yearElectricity}}</p>
+          <span>年度用电</span>
+        </div>
       </div>
   </div>
 </template>
@@ -19,6 +30,16 @@ export default {
         return {}
       }
     }
+  },
+  data () {
+    return {
+      ele: this.electric
+    }
+  },
+  watch: {
+    electric(val) {
+      this.ele = val
+    }
   }
 }
 </script>
@@ -31,7 +52,7 @@ export default {
     border-radius: 3px;
     margin-bottom: 10px;
     h1 {
-      color: #333;
+      color: $gray-3;
       font-size: 14px;
       font-weight: normal;
       display: flex;
@@ -39,12 +60,33 @@ export default {
       padding-left: 10px;
       padding-right: 10px;
       i {
-        display: block;
-        width: 3px;
-        height: 16px;
-        background: #ccc;
-        border-radius: 1px;
-        margin-right: 8px;
+        color: $yellow;
+        font-size: 22px;
+      }
+    }
+    .box-wrapper {
+      display: flex;
+      justify-content: space-between;
+      padding-left: 10px;
+      padding-right: 10px;
+      .inner {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 10px 20px;
+        p {
+          font-size: 20px;
+          color: $gray-3;
+          margin: 0;
+          // font-weight: bold;
+          font-family: Arial, Helvetica, sans-serif;
+        }
+        span {
+          color: $gray-9;
+          font-size: 12px;
+          margin-top: 8px;
+          display: block;
+        }
       }
     }
   }

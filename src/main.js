@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import './plugins/element.js'
+import echarts from 'echarts'
 import './assets/styles/global.css' // 全局
 import './assets/styles/iconfont.css' // 字体图标
 import './router/permission'
@@ -46,6 +47,7 @@ Vue.use(vuescroll, {
 })
 
 Vue.config.productionTip = false
+Vue.prototype.$echarts = echarts
 
 new Vue({
   router,

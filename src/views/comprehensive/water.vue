@@ -1,11 +1,22 @@
 <template>
   <div class="box">
       <h1>
-        <i></i>
+        <i class="iconfont icon-fenzu"></i>
         <span>全国水力监控</span>
       </h1>
-      <div>
-        {{water}}
+      <div class="box-wrapper">
+        <div class="inner">
+          <p>{{wat.todayWater}}</p>
+          <span>今日用水</span>
+        </div>
+        <div class="inner">
+          <p>{{wat.monthWater}}</p>
+          <span>本月用水</span>
+        </div>
+        <div class="inner">
+          <p>{{wat.yearWater}}</p>
+          <span>年度用水</span>
+        </div>
       </div>
   </div>
 </template>
@@ -19,6 +30,16 @@ export default {
         return {}
       }
     }
+  },
+  data () {
+    return {
+      wat: this.water
+    }
+  },
+  watch: {
+    water(val) {
+      this.wat = val
+    }
   }
 }
 </script>
@@ -31,7 +52,7 @@ export default {
     border-radius: 3px;
     margin-bottom: 10px;
     h1 {
-      color: #333;
+      color: $gray-3;
       font-size: 14px;
       font-weight: normal;
       display: flex;
@@ -39,12 +60,33 @@ export default {
       padding-left: 10px;
       padding-right: 10px;
       i {
-        display: block;
-        width: 3px;
-        height: 16px;
-        background: #ccc;
-        border-radius: 1px;
-        margin-right: 8px;
+        color: $main;
+        font-size: 21px;
+      }
+    }
+    .box-wrapper {
+      display: flex;
+      justify-content: space-between;
+      padding-left: 10px;
+      padding-right: 10px;
+      .inner {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 10px 20px;
+        p {
+          font-size: 20px;
+          color: $gray-3;
+          margin: 0;
+          // font-weight: bold;
+          font-family: Arial, Helvetica, sans-serif;
+        }
+        span {
+          color: $gray-9;
+          font-size: 12px;
+          margin-top: 8px;
+          display: block;
+        }
       }
     }
   }
