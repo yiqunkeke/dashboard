@@ -1,3 +1,3 @@
 module.exports = {
-  title: '智慧园区数据看板'
+  title: '智慧园区数据平台'
 }

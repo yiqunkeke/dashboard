@@ -78,9 +78,10 @@ export default {
   color: #fff !important;
 }
 .el-menu-item {
-  height: 40px !important;
-  line-height: 40px !important;
-  min-width: auto !important;
+  height: 50px !important;
+  line-height: 50px !important;
   font-size: 13px !important;
+  display: flex;
+  justify-content: center;
 }
 </style>

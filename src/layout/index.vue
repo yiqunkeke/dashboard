@@ -1,9 +1,9 @@
 <template>
     <div>
-        <Header />
+        <!-- <Header /> -->
         <div class="main-wrapper">
-            <Aside />
             <Main />
+            <Aside />
         </div>
     </div>
 </template>
@@ -24,11 +24,16 @@ export default {
 <style lang="scss" scoped>
 .main-wrapper {
   display: flex;
+  flex-direction: column;
   position: absolute;
-  top: $headerHeight;
+  // top: $headerHeight;
+  top: 0;
   left: 0;
   right:0;
   bottom: 0;
   overflow: auto;
+
+  background: #f1f3f5;
+  padding-bottom: 50px;
 }
 </style>

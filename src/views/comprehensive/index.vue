@@ -8,47 +8,78 @@
         <electricComp :electric="electric"/>
         <!-- 水力 -->
         <waterComp :water="water"/>
-        <!-- 券核销率 -->
-        <couponComp :coupon="coupon"/>
+        <!-- 海草屋客房统计 -->
+        <seaweedComp :seawead="seawead"/>
+        <!-- 拖挂房车客房统计 -->
+        <touringcarComp :touringcar="touringcar"/>
       </el-col>
       <el-col :span="18">
-        <!-- 总能耗 -->
-        <totalPowerComp :total="totalPower"/>
+        <!-- 上 -->
+        <el-row :gutter="20">
+          <el-col :span="15">
+            <boardComp />
+          </el-col>
+          <el-col :span="9">
+            <peopleComp :people="people" :equipment="equipment"/>
+            <activityComp :activity="activity"/>
+          </el-col>
+        </el-row>
+        <!-- 下 -->
+        <el-row :gutter="20">
+          <!-- 营地营收 -->
+          <incomeComp :income="income"/>
+        </el-row>
       </el-col>
     </el-row>
   </div>
 </template>
 
 <script>
-import weatherComp from './weather'
-import electricComp from './electric'
-import waterComp from './water'
-import couponComp from './coupon'
-import totalPowerComp from './totalPower'
-import { weatherData, electricData, waterData, couponData, totalPowerData } from '@/api/comprehensive'
+import weatherComp from './comp/weather'
+import electricComp from './comp/electric'
+import waterComp from './comp/water'
+import seaweedComp from './comp/seawead'
+import touringcarComp from './comp/touringcar'
+import boardComp from './comp/board'
+import peopleComp from './comp/people'
+import activityComp from './comp/activity'
+import incomeComp from './comp/income'
+import { weatherData, electricData, waterData, roomData, peopleData, equipmentData, activityData, incomeData } from '@/api/comprehensive'
 export default {
   components: {
     weatherComp,
     electricComp,
     waterComp,
-    couponComp,
-    totalPowerComp
+    seaweedComp,
+    touringcarComp,
+    boardComp,
+    peopleComp,
+    activityComp,
+    incomeComp
   },
   data () {
     return {
       weather: {},
       electric: {},
       water: {},
-      coupon: {},
-      totalPower: {}
+      seawead: {},
+      touringcar: {},
+      people: {},
+      equipment: {},
+      activity: {},
+      income: {}
     }
   },
   mounted () {
     this.getWeather()
     this.getElectric()
     this.getWater()
-    this.getCoupon()
-    this.getTotalPower()
+    this.getRoom('1')
+    this.getRoom('2')
+    this.getPeople()
+    this.getEquipment()
+    this.getActivity()
+    this.getIncomeData()
   },
   methods: {
     // 获取天气
@@ -63,13 +94,30 @@ export default {
     async getWater () {
       this.water = await waterData()
     },
-    // 券核销率
-    async getCoupon () {
-      this.coupon = await couponData()
+    // 海草屋客房
+    async getRoom (flag) {
+      if(flag === '1') {
+        this.seawead = await roomData({flag})
+      }
+      if(flag === '2') {
+        this.touringcar = await roomData({flag})
+      }
     },
-    // 总能耗
-    async getTotalPower () {
-      this.totalPower = await totalPowerData()
+    // 人员统计
+    async getPeople() {
+      this.people = await peopleData()
+    },
+    // 设备统计
+    async getEquipment() {
+      this.equipment = await equipmentData()
+    },
+    // 活动情况预测
+    async getActivity() {
+      this.activity = await activityData()
+    },
+    // 营地营收
+    async getIncomeData () {
+      this.income = await incomeData()
     }
   }
 }

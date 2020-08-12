@@ -1,7 +1,9 @@
 <template>
-    <el-main>
-        <router-view />
-    </el-main>
+    <vue-scroll>
+        <el-main>
+            <router-view />
+        </el-main>
+    </vue-scroll>    
 </template>
 
 <script>
@@ -10,8 +12,5 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-.el-main {
-    background: #f1f3f5;
-}
+<style>
 </style>

@@ -1,21 +1,25 @@
+/**
+ * 海草屋客户统计
+ * 创建时间：2020-08-12
+ * 创建人：李静科 20017906
+ */
 <template>
   <div class="box">
       <h1>
-        <i class="iconfont icon-shandian"></i>
-        <span>全国电力监控</span>
+        海草屋客户统计
       </h1>
       <div class="box-wrapper">
         <div class="inner">
-          <p>{{ele.todayElectricity}}</p>
-          <span>今日用电</span>
+          <span>总房间数</span>
+          <p>{{seawead.roomTotal}}</p>
         </div>
         <div class="inner">
-          <p>{{ele.monthElectricity}}</p>
-          <span>本月用电</span>
+          <span>已入住</span>
+          <p>{{seawead.checkedIn}}</p>
         </div>
         <div class="inner">
-          <p>{{ele.yearElectricity}}</p>
-          <span>年度用电</span>
+          <span>入住占比</span>
+          <p>{{seawead.ratio}}</p>
         </div>
       </div>
   </div>
@@ -24,21 +28,11 @@
 <script>
 export default {
   props: {
-    electric: {
+    seawead: {
       type: Object,
       default: () => {
         return {}
       }
-    }
-  },
-  data () {
-    return {
-      ele: this.electric
-    }
-  },
-  watch: {
-    electric(val) {
-      this.ele = val
     }
   }
 }
@@ -48,27 +42,24 @@ export default {
   .box {
     background: #fff;
     box-shadow: 0 0 10px 0 rgba(0,0,0,.1);
-    padding: 5px;
     border-radius: 3px;
     margin-bottom: 10px;
     h1 {
-      color: $gray-3;
+      color: #333;
       font-size: 14px;
       font-weight: normal;
       display: flex;
       align-items: center;
-      padding-left: 10px;
-      padding-right: 10px;
-      i {
-        color: $yellow;
-        font-size: 22px;
-      }
+      padding: 15px 20px;
+      margin: 0;
+      border-bottom: 1px solid #eee;
     }
     .box-wrapper {
       display: flex;
       justify-content: space-between;
       padding-left: 10px;
       padding-right: 10px;
+      padding-bottom: 10px;
       .inner {
         display: flex;
         align-items: center;
@@ -84,6 +75,7 @@ export default {
         span {
           color: $gray-9;
           font-size: 12px;
+          margin-bottom: 8px;
           margin-top: 8px;
           display: block;
         }

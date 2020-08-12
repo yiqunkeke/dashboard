@@ -1,8 +1,8 @@
 <template>
     <el-aside width="150">
-      <vue-scroll>
-        <el-menu
+      <el-menu
           class="menu"
+          mode="horizontal"
           :default-active="this.$route.path"
           background-color="#2d3037"
           text-color="#cccaca"
@@ -49,7 +49,6 @@
               <el-menu-item index="4-2">选项8</el-menu-item>
             </el-submenu> -->
         </el-menu>
-      </vue-scroll>
     </el-aside>
 </template>
 
@@ -76,10 +75,20 @@ export default {
 <style lang="scss" scoped>
 .el-aside {
     background: #2d3037;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
     .menu {
-      width: 150px;
+      display: flex;
+      flex: 1;
+      width: 100%;
+      height: 50px;
       border-right: none;
-      padding-top: 10px;
+      justify-content: space-between;
+      ::v-deep>div {
+        width: 25%;
+      }
     }
   }
 </style>

@@ -8,6 +8,9 @@ import './assets/styles/global.css' // 全局
 import './assets/styles/iconfont.css' // 字体图标
 import './router/permission'
 
+Vue.config.productionTip = false
+Vue.prototype.$echarts = echarts
+
 // https://vuescrolljs.yvescoding.org/zh/
 import vuescroll from 'vuescroll'
 import 'vuescroll/dist/vuescroll.css'
@@ -45,9 +48,6 @@ Vue.use(vuescroll, {
     }
   }
 })
-
-Vue.config.productionTip = false
-Vue.prototype.$echarts = echarts
 
 new Vue({
   router,

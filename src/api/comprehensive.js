@@ -25,18 +25,47 @@ export function waterData () {
   })
 }
 
-// 券核销率
-export function couponData () {
+/** 客房统计
+ * 
+ * @param {*} requestModel 
+ * flag
+ */
+export function roomData (requestModel) {
   return request({
-    url: `${baseApi.COMPREHENSIVE_URL}/situation/private/coupon`,
+    url: `${baseApi.COMPREHENSIVE_URL}/situation/private/roomstatistics`,
+    method: 'post',
+    data: requestModel
+  })
+}
+
+// 人员统计
+export function peopleData () {
+  return request({
+    url: `${baseApi.COMPREHENSIVE_URL}/situation/private/peoplestatistics`,
     method: 'post'
   })
 }
 
-// 总能耗
-export function totalPowerData () {
+// 设备统计
+export function equipmentData () {
   return request({
-    url: `${baseApi.COMPREHENSIVE_URL}/situation/private/powertotal`,
+    url: `${baseApi.COMPREHENSIVE_URL}/situation/private/equipmentstatistics`,
+    method: 'post'
+  })
+}
+
+// 活动情况预测
+export function activityData () {
+  return request({
+    url: `${baseApi.COMPREHENSIVE_URL}/situation/private/activity`,
+    method: 'post'
+  })
+}
+
+// 营地营收
+export function incomeData () {
+  return request({
+    url: `${baseApi.COMPREHENSIVE_URL}/situation/private/income`,
     method: 'post'
   })
 }
