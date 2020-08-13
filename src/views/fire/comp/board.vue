@@ -1,6 +1,6 @@
 <template>
   <div>
-      test4
+      中间图片展示
   </div>
 </template>
 

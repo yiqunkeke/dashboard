@@ -1,12 +1,12 @@
 /**
- * 海草屋客户统计
+ * 海草屋客房统计
  * 创建时间：2020-08-12
  * 创建人：李静科 20017906
  */
 <template>
   <div class="box">
       <h1>
-        海草屋客户统计
+        海草屋客房统计
       </h1>
       <div class="box-wrapper">
         <div class="inner">

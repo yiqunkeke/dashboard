@@ -55,12 +55,39 @@ export default {
               data: this.xData
           },
           yAxis: {
-              type: 'value'
+              type: 'value',
+              splitLine: {  //网格线
+                lineStyle: {
+                    type:'dashed'    //设置网格线类型 dotted：虚线   solid:实线
+                },
+                show:true //隐藏或显示
+              }
           },
+          tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'cross',
+                label: {
+                    backgroundColor: '#6a7985'
+                }
+            }
+        },
           series: [{
               data: this.seriesData,
               type: 'line',
-              areaStyle: {}
+              areaStyle: {
+                normal: {
+                  color: '#409eff' //改变区域颜色
+                }
+              },
+              itemStyle : {
+                normal : {
+                  color:'#409eff', //改变折线点的颜色
+                  lineStyle: {
+                    color:'#409eff' //改变折线颜色
+                  }
+                }
+              }
           }]
       };
       myChart.setOption(option)

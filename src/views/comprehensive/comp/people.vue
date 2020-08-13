@@ -80,7 +80,7 @@ export default {
     border-radius: 3px;
     margin-bottom: 10px;
     margin-right: 10px;
-    width: 85px;
+    min-width: 83px;
     // &:nth-child(3n) {
     //   margin-right: 0;
     // }
