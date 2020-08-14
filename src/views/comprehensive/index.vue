@@ -17,7 +17,7 @@
         <!-- 上 -->
         <el-row :gutter="20">
           <el-col :span="15">
-            <boardComp />
+            <boardComp :power="power"/>
           </el-col>
           <el-col :span="9">
             <peopleComp :people="people" :equipment="equipment"/>
@@ -44,7 +44,7 @@ import boardComp from './comp/board'
 import peopleComp from './comp/people'
 import activityComp from './comp/activity'
 import incomeComp from './comp/income'
-import { weatherData, electricData, waterData, roomData, peopleData, equipmentData, activityData, incomeData } from '@/api/comprehensive'
+import { weatherData, electricData, waterData, roomData, powerTotal, peopleData, equipmentData, activityData, incomeData } from '@/api/comprehensive'
 export default {
   components: {
     weatherComp,
@@ -76,6 +76,7 @@ export default {
     this.getWater()
     this.getRoom('1')
     this.getRoom('2')
+    this.getPowerTotal()
     this.getPeople()
     this.getEquipment()
     this.getActivity()
@@ -102,6 +103,10 @@ export default {
       if(flag === '2') {
         this.touringcar = await roomData({flag})
       }
+    },
+    // 总能耗统计
+    async getPowerTotal () {
+      this.power = await powerTotal()
     },
     // 人员统计
     async getPeople() {

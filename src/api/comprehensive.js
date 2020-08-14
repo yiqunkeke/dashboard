@@ -38,6 +38,14 @@ export function roomData (requestModel) {
   })
 }
 
+// 总耗能统计
+export function powerTotal () {
+  return request({
+    url: `${baseApi.COMPREHENSIVE_URL}/situation/private/powertotal`,
+    method: 'post'
+  })
+}
+
 // 人员统计
 export function peopleData () {
   return request({

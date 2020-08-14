@@ -26,8 +26,9 @@ export default {
   data () {
     return {
       tre: this.trend,
-      seriesDataCircle: [], // 饼图数据
-      xDataCircle: []
+      legendData: [],
+      xAxisData: [],
+      seriesData: []
     }
   },
   watch: {
@@ -35,14 +36,32 @@ export default {
       this.tre = val
       // 数据处理
       console.log(this.tre)
-    //   this.online.onlineList.forEach(item => {
-    //     this.xDataCircle.push(item.desc)
-    //     this.seriesDataCircle.push({
-    //       value: Number(item.value),
-    //       name: item.desc
-    //     })
-    //   })
-    //   this.drawLine()
+      this.tre[0].dataSet.forEach(item => {
+        this.xAxisData.push(item.date)
+      })
+      let color = ['#409eff','#FFC82C']
+      this.tre.forEach((item, index) => {
+        this.legendData.push(item.name)
+        let arr = []
+        item.dataSet.forEach(it => {
+          arr.push(Number(it.value))
+        })
+        this.seriesData.push({
+          name: item.name,
+          type: 'line',
+          stack: '总量',
+          data: arr,
+          itemStyle : {
+            normal : {
+              color: color[index], //改变折线点的颜色
+              lineStyle: {
+                color: color[index] //改变折线颜色
+              }
+            }
+          }
+        })
+      })
+      this.drawLine()
     }
   },
   mounted () {
@@ -51,8 +70,6 @@ export default {
   methods: {
     drawLine() {
       const chart = this.$refs.chart
-      // console.log(this.xDataCircle)
-      // console.log(this.seriesDataCircle)
       if (chart) {
         const myChart = this.$echarts.init(chart)
         const option = {
@@ -63,7 +80,7 @@ export default {
                 trigger: 'axis'
             },
             legend: {
-                data: ['邮件营销', '联盟广告']
+                data: this.legendData
             },
             grid: {
                 left: '3%',
@@ -71,33 +88,21 @@ export default {
                 bottom: '3%',
                 containLabel: true
             },
-            toolbox: {
-                feature: {
-                    saveAsImage: {}
-                }
-            },
             xAxis: {
                 type: 'category',
                 boundaryGap: false,
-                data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+                data: this.xAxisData
             },
             yAxis: {
-                type: 'value'
-            },
-            series: [
-                {
-                    name: '邮件营销',
-                    type: 'line',
-                    stack: '总量',
-                    data: [120, 132, 101, 134, 90, 230, 210]
-                },
-                {
-                    name: '联盟广告',
-                    type: 'line',
-                    stack: '总量',
-                    data: [220, 182, 191, 234, 290, 330, 310]
+                type: 'value',
+                splitLine: {  //网格线
+                  lineStyle: {
+                      type:'dashed'    //设置网格线类型 dotted：虚线   solid:实线
+                  },
+                  show:true //隐藏或显示
                 }
-            ]
+            },
+            series: this.seriesData
         }
 
     myChart.setOption(option)

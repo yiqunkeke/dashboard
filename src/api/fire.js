@@ -25,10 +25,43 @@ export function equipmentRatio () {
     })
 }
 
+// 报警统计
+export function alarmStatistic () {
+  return request({
+    url: `${baseApi.COMPREHENSIVE_URL}/firefighting/private/alarmstatistics`,
+    method: 'post'
+  })
+}
+
+// 根据位置查看设备
+export function positionEquip () {
+  return request({
+    url: `${baseApi.COMPREHENSIVE_URL}/firefighting/private/positionequipment`,
+    method: 'post'
+  })
+}
+
 // 设备报警类型趋势图
 export function trendData () {
     return request({
       url: `${baseApi.COMPREHENSIVE_URL}/firefighting/private/exceptionstatistics`,
       method: 'post'
     })
+}
+
+// 设备报警情况分析
+export function equipAlarmAnalysis (requestModel) {
+    return request({
+      url: `${baseApi.COMPREHENSIVE_URL}/firefighting/private/alarmanalysis`,
+      method: 'post',
+      data: requestModel
+    })
+}
+
+// 区域火源报警比重
+export function areaFireSource () {
+  return request({
+    url: `${baseApi.COMPREHENSIVE_URL}/firefighting/private/areafiresource`,
+    method: 'post'
+  })
 }
