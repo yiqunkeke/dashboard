@@ -1,14 +1,14 @@
 /**
- * 摄像头在线情况
+ * 行为统计
  * 创建时间：2020-08-17
  * 创建人：李静科 20017906
  */
 <template>
   <div class="box">
       <h1>
-        摄像头在线情况
+        行为统计
       </h1>
-      <!-- {{cameraOnline}} -->
+      <!-- {{behavior}} -->
       <div ref="chart" :style="{width: '100%', height: '300px'}"></div>
   </div>
 </template>
@@ -16,7 +16,7 @@
 <script>
 export default {
   props: {
-    cameraOnline: {
+    behavior: {
       type: Object,
       default: () => {
         return {}
@@ -25,17 +25,17 @@ export default {
   },
   data () {
     return {
-      camera: this.cameraOnline,
+      behave: this.behavior,
       seriesDataCircle: [], // 饼图数据
       xDataCircle: []
     }
   },
   watch: {
-    cameraOnline (val) {
-      this.camera = val
+    behavior (val) {
+      this.behave = val
       // 数据处理
-      console.log(this.camera)
-      this.camera.listAreaCameras.forEach(item => {
+      // console.log(this.behave)
+      this.behave.list.forEach(item => {
         this.xDataCircle.push(item.desc)
         this.seriesDataCircle.push({
           value: Number(item.value),
@@ -55,7 +55,7 @@ export default {
         const option = {
           title: {
             // text: '当月营收',
-            subtext: `总设备数${this.camera.cameraTotal}`,
+            subtext: `总数${this.behave.total}`,
             left: 'center'
           },
           tooltip: {
@@ -69,7 +69,7 @@ export default {
           // },
           series: [
             {
-              name: '摄像头在线情况',
+              name: '行为统计',
               type: 'pie',
               radius: ['50%', '65%'],
               // center: ['50%', '60%'],

@@ -63,6 +63,9 @@ export default {
               show: true // 隐藏或显示
             }
           },
+          grid: { // 解决y轴数值太大，展示不全
+            left: 55
+          },
           tooltip: {
             trigger: 'axis',
             axisPointer: {
