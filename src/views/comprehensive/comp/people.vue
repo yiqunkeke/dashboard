@@ -51,14 +51,14 @@ export default {
   data () {
     return {
       peo: this.people,
-      equip: this.equipment,
+      equip: this.equipment
     }
   },
   watch: {
-    people(val) {
+    people (val) {
       this.peo = val
     },
-    equipment(val) {
+    equipment (val) {
       this.equip = val
     }
   }

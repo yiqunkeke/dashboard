@@ -42,7 +42,7 @@ export default {
     }
   },
   watch: {
-    water(val) {
+    water (val) {
       this.wat = val
     }
   }

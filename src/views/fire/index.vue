@@ -74,39 +74,32 @@ export default {
     // 获取实时警报
     async getRealAlarm () {
       this.realAlarm = await realtimeAlarm()
-      // console.log(this.realAlarm)
     },
     // 消防设备在线情况
     async getEquipmentOnline () {
       this.onlineStatus = await equipmentOnline()
-      // console.log(this.onlineStatus)
     },
     // 获取设备占比
     async getEquipmentRatio () {
       this.equipRatio = await equipmentRatio()
-      // console.log(this.equipRatio)
     },
     // 报警统计
     async getAlarmStatistic () {
       this.statistic = await alarmStatistic()
-      // console.log(this.statistic)
     },
     // 根据位置查看设备
     async getPositionEquip () {
       this.posEquip = await positionEquip()
-      // console.log(this.posEquip)
     },
     // 设备报警类型趋势
     async getTrend () {
       this.trend = await trendData()
-      // console.log(this.trend)
     },
     // 消防设备报警情况分析
     async getAnalysis (pageNum) {
-      this.analysis = await equipAlarmAnalysis({pageNum})
-      // console.log(this.analysis)
+      this.analysis = await equipAlarmAnalysis({ pageNum })
     },
-    handleCurrentChange(pageNum) {
+    handleCurrentChange (pageNum) {
       this.getAnalysis(pageNum)
     },
     // 区域火源报警比重

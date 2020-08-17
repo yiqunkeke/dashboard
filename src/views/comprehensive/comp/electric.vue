@@ -42,7 +42,7 @@ export default {
     }
   },
   watch: {
-    electric(val) {
+    electric (val) {
       this.ele = val
     }
   }

@@ -26,8 +26,8 @@ export function waterData () {
 }
 
 /** 客房统计
- * 
- * @param {*} requestModel 
+ *
+ * @param {*} requestModel
  * flag
  */
 export function roomData (requestModel) {

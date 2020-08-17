@@ -20,7 +20,7 @@ export default {
       }
     }
   },
-  data() {
+  data () {
     return {
       act: this.activity,
       realtime: [],
@@ -33,72 +33,72 @@ export default {
       this.act = val
       this.realtime = this.act.realTime
       // 处理数据
-      if(this.act && this.realtime) {
+      if (this.act && this.realtime) {
         this.realtime.forEach(item => {
           this.xData.push(item.time) // x轴数据
           this.seriesData.push(item.activityNum) // y轴数据
         })
-        this.drawLine();
+        this.drawLine()
       }
     }
   },
   methods: {
-    drawLine() {
+    drawLine () {
       const chart = this.$refs.chart
 
       if (chart) {
         const myChart = this.$echarts.init(chart)
         const option = {
           xAxis: {
-              type: 'category',
-              boundaryGap: false,
-              data: this.xData
+            type: 'category',
+            boundaryGap: false,
+            data: this.xData
           },
           yAxis: {
-              type: 'value',
-              splitLine: {  //网格线
-                lineStyle: {
-                    type:'dashed'    //设置网格线类型 dotted：虚线   solid:实线
-                },
-                show:true //隐藏或显示
-              }
+            type: 'value',
+            splitLine: { // 网格线
+              lineStyle: {
+                type: 'dashed' // 设置网格线类型 dotted：虚线   solid:实线
+              },
+              show: true // 隐藏或显示
+            }
           },
           tooltip: {
             trigger: 'axis',
             axisPointer: {
-                type: 'cross',
-                label: {
-                    backgroundColor: '#6a7985'
-                }
+              type: 'cross',
+              label: {
+                backgroundColor: '#6a7985'
+              }
             }
-        },
+          },
           series: [{
-              data: this.seriesData,
-              type: 'line',
-              areaStyle: {
-                normal: {
-                  color: '#409eff' //改变区域颜色
-                }
-              },
-              itemStyle : {
-                normal : {
-                  color:'#409eff', //改变折线点的颜色
-                  lineStyle: {
-                    color:'#409eff' //改变折线颜色
-                  }
+            data: this.seriesData,
+            type: 'line',
+            areaStyle: {
+              normal: {
+                color: '#409eff' // 改变区域颜色
+              }
+            },
+            itemStyle: {
+              normal: {
+                color: '#409eff', // 改变折线点的颜色
+                lineStyle: {
+                  color: '#409eff' // 改变折线颜色
                 }
               }
+            }
           }]
-      };
-      myChart.setOption(option)
-        window.addEventListener("resize", function() {
+        }
+        myChart.setOption(option)
+        window.addEventListener('resize', function () {
           myChart.resize()
         })
       }
       this.$on('hook:destroyed', () => {
-        window.removeEventListener("resize", function() {
-          myChart.resize();
-        });
+        window.removeEventListener('resize', function () {
+          myChart.resize()
+        })
       })
     }
   }

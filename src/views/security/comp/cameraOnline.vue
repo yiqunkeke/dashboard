@@ -1,22 +1,22 @@
 /**
- * 设备在线情况
- * 创建时间：2020-08-13
+ * 摄像头在线情况
+ * 创建时间：2020-08-17
  * 创建人：李静科 20017906
  */
 <template>
   <div class="box">
       <h1>
-        消防设备在线情况
+        摄像头在线情况
       </h1>
-      <!-- {{onlineStatus}} -->
-      <div ref="chart2" :style="{width: '100%', height: '300px'}"></div>
+      <!-- {{cameraOnline}} -->
+      <div ref="chart" :style="{width: '100%', height: '300px'}"></div>
   </div>
 </template>
 
 <script>
 export default {
   props: {
-    onlineStatus: {
+    cameraOnline: {
       type: Object,
       default: () => {
         return {}
@@ -25,39 +25,39 @@ export default {
   },
   data () {
     return {
-      online: this.onlineStatus,
+      camera: this.cameraOnline,
       seriesDataCircle: [], // 饼图数据
       xDataCircle: []
     }
   },
   watch: {
-    onlineStatus (val) {
-      this.online = val
+    cameraOnline (val) {
+      this.camera = val
       // 数据处理
-      // console.log(this.online)
-      this.online.onlineList.forEach(item => {
-        this.xDataCircle.push(item.desc)
-        this.seriesDataCircle.push({
-          value: Number(item.value),
-          name: item.desc
-        })
-      })
-      this.drawCircle()
+      console.log(this.camera)
+    //   this.area.areaFireList.forEach(item => {
+    //     this.xDataCircle.push(item.desc)
+    //     this.seriesDataCircle.push({
+    //       value: Number(item.value),
+    //       name: item.desc
+    //     })
+    //   })
+    //   this.drawCircle()
     }
   },
   methods: {
     drawCircle () {
-      const chart = this.$refs.chart2
+      const chart = this.$refs.chart
       // console.log(this.xDataCircle)
       // console.log(this.seriesDataCircle)
       if (chart) {
         const myChart = this.$echarts.init(chart)
         const option = {
-          // title: {
-          //     text: '当月营收',
-          //     subtext: `当月总收入${this.inc.month.incomeTotal}`,
-          //     left: 'left'
-          // },
+          title: {
+            // text: '当月营收',
+            subtext: `消防报警总数${this.area.fireSourceTotal}`,
+            left: 'center'
+          },
           tooltip: {
             trigger: 'item',
             formatter: '{a} <br/>{b} : {c} ({d}%)'
@@ -69,7 +69,7 @@ export default {
           // },
           series: [
             {
-              name: '消防设备在线情况',
+              name: '区域火源报警比重',
               type: 'pie',
               radius: ['50%', '65%'],
               // center: ['50%', '60%'],

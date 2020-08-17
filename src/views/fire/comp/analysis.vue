@@ -63,7 +63,7 @@ export default {
       analy: this.analysis,
       pageNum: 1,
       pageSize: 5,
-      total: 2,
+      total: 2
     }
   },
   watch: {
@@ -75,14 +75,14 @@ export default {
     }
   },
   methods: {
-        handleSizeChange(val) {
-            console.log(`每页 ${val} 条`);
-        },
-        handleCurrentChange(val) {
-            console.log(`当前页: ${val}`);
-            this.$emit('currentChange', val)
-        }
+    handleSizeChange (val) {
+      console.log(`每页 ${val} 条`)
+    },
+    handleCurrentChange (val) {
+      console.log(`当前页: ${val}`)
+      this.$emit('currentChange', val)
     }
+  }
 }
 </script>
 

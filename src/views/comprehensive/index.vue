@@ -64,6 +64,7 @@ export default {
       water: {},
       seawead: {},
       touringcar: {},
+      power: {},
       people: {},
       equipment: {},
       activity: {},
@@ -97,11 +98,11 @@ export default {
     },
     // 海草屋客房
     async getRoom (flag) {
-      if(flag === '1') {
-        this.seawead = await roomData({flag})
+      if (flag === '1') {
+        this.seawead = await roomData({ flag })
       }
-      if(flag === '2') {
-        this.touringcar = await roomData({flag})
+      if (flag === '2') {
+        this.touringcar = await roomData({ flag })
       }
     },
     // 总能耗统计
@@ -109,15 +110,15 @@ export default {
       this.power = await powerTotal()
     },
     // 人员统计
-    async getPeople() {
+    async getPeople () {
       this.people = await peopleData()
     },
     // 设备统计
-    async getEquipment() {
+    async getEquipment () {
       this.equipment = await equipmentData()
     },
     // 活动情况预测
-    async getActivity() {
+    async getActivity () {
       this.activity = await activityData()
     },
     // 营地营收

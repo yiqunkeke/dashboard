@@ -20,28 +20,6 @@ const securityRouter = {
         breadcrumb: false
       }
     }
-    // {
-    //   path: 'test5',
-    //   component: function (resolve) {
-    //     require(['@/views/security/test5'], resolve)
-    //   },
-    //   meta: {
-    //     title: '选项5',
-    //     icon: 'anfangguanli',
-    //     breadcrumb: false
-    //   }
-    // },
-    // {
-    //   path: 'test6',
-    //   component: function (resolve) {
-    //     require(['@/views/security/test6'], resolve)
-    //   },
-    //   meta: {
-    //     title: '选项6',
-    //     icon: 'anfangguanli',
-    //     breadcrumb: false
-    //   }
-    // }
   ]
 }
 

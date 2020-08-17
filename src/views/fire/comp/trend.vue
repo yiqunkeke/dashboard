@@ -39,10 +39,10 @@ export default {
       this.tre[0].dataSet.forEach(item => {
         this.xAxisData.push(item.date)
       })
-      let color = ['#409eff','#FFC82C']
+      const color = ['#409eff', '#FFC82C']
       this.tre.forEach((item, index) => {
         this.legendData.push(item.name)
-        let arr = []
+        const arr = []
         item.dataSet.forEach(it => {
           arr.push(Number(it.value))
         })
@@ -51,11 +51,11 @@ export default {
           type: 'line',
           stack: '总量',
           data: arr,
-          itemStyle : {
-            normal : {
-              color: color[index], //改变折线点的颜色
+          itemStyle: {
+            normal: {
+              color: color[index], // 改变折线点的颜色
               lineStyle: {
-                color: color[index] //改变折线颜色
+                color: color[index] // 改变折线颜色
               }
             }
           }
@@ -65,56 +65,56 @@ export default {
     }
   },
   mounted () {
-      this.drawLine()
+    this.drawLine()
   },
   methods: {
-    drawLine() {
+    drawLine () {
       const chart = this.$refs.chart
       if (chart) {
         const myChart = this.$echarts.init(chart)
         const option = {
-            // title: {
-            //     text: '折线图堆叠'
-            // },
-            tooltip: {
-                trigger: 'axis'
-            },
-            legend: {
-                data: this.legendData
-            },
-            grid: {
-                left: '3%',
-                right: '4%',
-                bottom: '3%',
-                containLabel: true
-            },
-            xAxis: {
-                type: 'category',
-                boundaryGap: false,
-                data: this.xAxisData
-            },
-            yAxis: {
-                type: 'value',
-                splitLine: {  //网格线
-                  lineStyle: {
-                      type:'dashed'    //设置网格线类型 dotted：虚线   solid:实线
-                  },
-                  show:true //隐藏或显示
-                }
-            },
-            series: this.seriesData
+          // title: {
+          //     text: '折线图堆叠'
+          // },
+          tooltip: {
+            trigger: 'axis'
+          },
+          legend: {
+            data: this.legendData
+          },
+          grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+          },
+          xAxis: {
+            type: 'category',
+            boundaryGap: false,
+            data: this.xAxisData
+          },
+          yAxis: {
+            type: 'value',
+            splitLine: { // 网格线
+              lineStyle: {
+                type: 'dashed' // 设置网格线类型 dotted：虚线   solid:实线
+              },
+              show: true // 隐藏或显示
+            }
+          },
+          series: this.seriesData
         }
 
-    myChart.setOption(option)
-        window.addEventListener("resize", function() {
+        myChart.setOption(option)
+        window.addEventListener('resize', function () {
           myChart.resize()
         })
       }
-       this.$on('hook:destroyed',()=>{
-         window.removeEventListener("resize", function() {
-          myChart.resize();
-        });
+      this.$on('hook:destroyed', () => {
+        window.removeEventListener('resize', function () {
+          myChart.resize()
         })
+      })
     }
   }
 }

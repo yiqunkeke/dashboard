@@ -9,12 +9,12 @@
 </template>
 
 <script>
-import Header from './header'
+// import Header from './header'
 import Aside from './aside'
 import Main from './main'
 export default {
   components: {
-    Header,
+    // Header,
     Aside,
     Main
   }

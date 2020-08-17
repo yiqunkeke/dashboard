@@ -3,7 +3,7 @@
         <el-main>
             <router-view />
         </el-main>
-    </vue-scroll>    
+    </vue-scroll>
 </template>
 
 <script>
