@@ -84,20 +84,11 @@ export default {
               show: true // 隐藏或显示
             }
           },
+          color: ['#409eff'],
           barWidth: 15,
           series: [{
             data: this.seriesData,
-            type: 'bar',
-            itemStyle: {
-              normal: {
-                // 这里是重点
-                color: function (params) {
-                  // 注意，如果颜色太少的话，后面颜色不会自动循环，最好多定义几个颜色
-                  var colorList = ['#409eff', '#409eff', '#409eff', '#409eff', '#409eff', '#409eff', '#409eff', '#409eff', '#409eff', '#409eff', '#409eff', '#409eff']
-                  return colorList[params.dataIndex]
-                }
-              }
-            }
+            type: 'bar'
           }]
         }
         myChart.setOption(option)
@@ -127,6 +118,7 @@ export default {
             trigger: 'item',
             formatter: '{a} <br/>{b} : {c} ({d}%)'
           },
+          color: ['#409eff', '#4fcb74', '#fbd438', '#f04864', '#9860e5', '#37cbcb', '#37a2da', '#e7bcf3', '#8378ea', '#96bfff', '#ff9f7f'],
           // legend: {
           //     orient: 'vertical',
           //     left: 'right',
@@ -146,16 +138,16 @@ export default {
                   shadowColor: 'rgba(0, 0, 0, 0.5)'
                 }
               },
-              itemStyle: {
-                normal: {
-                  // 这里是重点
-                  color: function (params) {
-                    // 注意，如果颜色太少的话，后面颜色不会自动循环，最好多定义几个颜色
-                    var colorList = ['#409eff', '#4fcb74', '#fbd438', '#f04864', '#9860e5', '#37cbcb', '#37a2da', '#e7bcf3', '#8378ea', '#96bfff', '#ff9f7f']
-                    return colorList[params.dataIndex]
-                  }
-                }
-              },
+              // itemStyle: {
+              //   normal: {
+              //     // 这里是重点
+              //     color: function (params) {
+              //       // 注意，如果颜色太少的话，后面颜色不会自动循环，最好多定义几个颜色
+              //       var colorList = ['#409eff', '#4fcb74', '#fbd438', '#f04864', '#9860e5', '#37cbcb', '#37a2da', '#e7bcf3', '#8378ea', '#96bfff', '#ff9f7f']
+              //       return colorList[params.dataIndex]
+              //     }
+              //   }
+              // },
               label: {
                 formatter: '{a|{a}}{abg|}\n{hr|}\n  {b|{b}：}{c}  {per|{d}%}  ',
                 backgroundColor: '#eee',

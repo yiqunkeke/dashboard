@@ -50,15 +50,7 @@ export default {
           name: item.name,
           type: 'line',
           stack: '总量',
-          data: arr,
-          itemStyle: {
-            normal: {
-              color: color[index], // 改变折线点的颜色
-              lineStyle: {
-                color: color[index] // 改变折线颜色
-              }
-            }
-          }
+          data: arr
         })
       })
       this.drawLine()
@@ -79,6 +71,7 @@ export default {
           tooltip: {
             trigger: 'axis'
           },
+          color: ['#409eff', '#FFC82C'],
           legend: {
             data: this.legendData
           },
