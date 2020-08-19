@@ -49,6 +49,14 @@ export function trendData () {
   })
 }
 
+// 火源高发处视频监控
+export function videoData () {
+  return request({
+    url: `${baseApi.COMPREHENSIVE_URL}/firefighting/private/firevideos`,
+    method: 'post'
+  })
+}
+
 // 设备报警情况分析
 export function equipAlarmAnalysis (requestModel) {
   return request({

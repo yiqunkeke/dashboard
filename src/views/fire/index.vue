@@ -17,7 +17,7 @@
       </el-col>
       <el-col :span="6">
         <!-- 火源高发处视频监控 -->
-        <videoComp/>
+        <videoComp :video="video"/>
         <!-- 设备报警情况分析 -->
         <analysisComp :analysis="analysis" @currentChange="handleCurrentChange"/>
         <!-- 区域火源报警比重 -->
@@ -36,7 +36,7 @@ import trendComp from './comp/trend'
 import videoComp from './comp/video'
 import analysisComp from './comp/analysis'
 import areaFireComp from './comp/areaFireSource'
-import { realtimeAlarm, equipmentOnline, equipmentRatio, alarmStatistic, positionEquip, trendData, equipAlarmAnalysis, areaFireSource } from '@/api/fire'
+import { realtimeAlarm, equipmentOnline, equipmentRatio, alarmStatistic, positionEquip, trendData, equipAlarmAnalysis, areaFireSource, videoData } from '@/api/fire'
 export default {
   components: {
     realAlarm,
@@ -57,7 +57,8 @@ export default {
       posEquip: {},
       trend: [],
       analysis: {},
-      areaFire: {}
+      areaFire: {},
+      video: []
     }
   },
   mounted () {
@@ -69,6 +70,7 @@ export default {
     this.getTrend()
     this.getAnalysis('1')
     this.getAreaFire()
+    this.getVideo()
   },
   methods: {
     // 获取实时警报
@@ -105,6 +107,10 @@ export default {
     // 区域火源报警比重
     async getAreaFire () {
       this.areaFire = await areaFireSource()
+    },
+    // 火源高发处视频监控
+    async getVideo () {
+      this.video = await videoData()
     }
   }
 }
