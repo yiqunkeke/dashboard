@@ -5,7 +5,7 @@
       </h1>
       <div class="box-wrapper">
         <!-- {{activity}} -->
-        <div ref="chart" :style="{width: '100%', height: '270px'}"></div>
+        <div ref="chart" :style="{width: '100%', height: '220px'}"></div>
       </div>
   </div>
 </template>
@@ -52,15 +52,27 @@ export default {
           xAxis: {
             type: 'category',
             boundaryGap: false,
-            data: this.xData
+            data: this.xData,
+            axisLine: {
+              lineStyle: {
+                  color: '#fff', // 颜色
+                  width: 0 // 粗细
+              }
+            }
           },
           yAxis: {
             type: 'value',
             splitLine: { // 网格线
               lineStyle: {
-                type: 'dashed' // 设置网格线类型 dotted：虚线   solid:实线
+                type: 'dashed', // 设置网格线类型 dotted：虚线   solid:实线
               },
-              show: true // 隐藏或显示
+              show: false // 隐藏或显示
+            },
+            axisLine: {
+              lineStyle: {
+                  color: '#fff', // 颜色
+                  width: 0 // 粗细
+              }
             }
           },
           grid: { // 解决y轴数值太大，展示不全
@@ -78,16 +90,17 @@ export default {
           series: [{
             data: this.seriesData,
             type: 'line',
-            areaStyle: {
-              normal: {
-                color: '#409eff' // 改变区域颜色
-              }
-            },
+            smooth: true,
+            // areaStyle: {
+            //   normal: {
+            //     color: '#fe7699' // 改变区域颜色
+            //   }
+            // },
             itemStyle: {
               normal: {
-                color: '#409eff', // 改变折线点的颜色
+                color: '#fe7699', // 改变折线点的颜色
                 lineStyle: {
-                  color: '#409eff' // 改变折线颜色
+                  color: '#fe7699' // 改变折线颜色
                 }
               }
             }
@@ -109,27 +122,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .box {
-    background: #fff;
-    box-shadow: 0 0 10px 0 rgba(0,0,0,.1);
-    border-radius: 3px;
-    margin-bottom: 10px;
-    h1 {
-      color: #333;
-      font-size: 14px;
-      font-weight: normal;
-      display: flex;
-      align-items: center;
-      padding: 15px 20px;
-      margin: 0;
-      border-bottom: 1px solid #eee;
-    }
-    .box-wrapper {
+  @import '~@/assets/styles/box.scss';
+  .box-wrapper {
       display: flex;
       justify-content: space-between;
       padding-left: 10px;
       padding-right: 10px;
       padding-bottom: 10px;
     }
-  }
 </style>

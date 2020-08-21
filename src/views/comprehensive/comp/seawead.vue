@@ -9,17 +9,20 @@
         海草屋客房统计
       </h1>
       <div class="box-wrapper">
-        <div class="inner">
-          <span>总房间数</span>
-          <p>{{seawead.roomTotal}}</p>
-        </div>
-        <div class="inner">
-          <span>已入住</span>
-          <p>{{seawead.checkedIn}}</p>
-        </div>
-        <div class="inner">
-          <span>入住占比</span>
-          <p>{{seawead.ratio}}</p>
+        <div ref="chart" :style="{width: '50%', height: '112px'}"></div>
+        <div class="text">
+          <div class="inner">
+            <span>总房间数：</span>
+            <p>{{sea.roomTotal}}</p>
+          </div>
+          <div class="inner">
+            <span>已入住数：</span>
+            <p>{{sea.checkedIn}}</p>
+          </div>
+          <!-- <div class="inner">
+            <span>入住占比：</span>
+            <p>{{sea.ratio}}</p>
+          </div> -->
         </div>
       </div>
   </div>
@@ -34,52 +37,118 @@ export default {
         return {}
       }
     }
+  },
+  data () {
+    return {
+      sea: this.seawead,
+      seriesDataCircle: [], // 饼图数据
+      xDataCircle: ['已入住', '未入住']
+    }
+  },
+  watch: {
+    seawead (val) {
+      this.sea = val
+      // 数据处理
+      // console.log(this.sea)
+      this.seriesDataCircle = [
+        {
+          value: Number(this.sea.checkedIn),
+          name: '已入住'
+        },
+        {
+          value: Number(this.sea.roomTotal - this.sea.checkedIn),
+          name: '未入住'
+        }
+      ]
+      this.drawCircle()
+    }
+  },
+  methods: {
+    drawCircle () {
+      const chart = this.$refs.chart
+      // console.log(this.xDataCircle)
+      // console.log(this.seriesDataCircle)
+      if (chart) {
+        const myChart = this.$echarts.init(chart)
+        const option = {
+          // title: {
+          //     // text: '当月营收',
+          //     subtext: `${this.sea.roomTotal}`,
+          //     left: 'left'
+          // },
+          tooltip: {
+            trigger: 'item',
+            formatter: '{a} <br/>{b} : {c} ({d}%)',
+            position: 'inside'
+          },
+          color: ['#fc6c6c', '#222c4f'],
+          // legend: {
+          //     orient: 'vertical',
+          //     left: 'right',
+          //     data: this.xDataCircle
+          // },
+          series: [
+            {
+              name: '海草屋客房统计',
+              type: 'pie',
+              radius: ['50%', '75%'],
+              // center: ['50%', '60%'],
+              avoidLabelOverlap: false,
+              label: {
+                  show: false,
+                  position: 'center'
+              },
+              data: this.seriesDataCircle,
+              emphasis: {
+                itemStyle: {
+                  shadowBlur: 10,
+                  shadowOffsetX: 0,
+                  shadowColor: 'rgba(0, 0, 0, 0.5)'
+                }
+              }
+            }
+          ]
+        }
+      myChart.setOption(option)
+        window.addEventListener('resize', function () {
+          myChart.resize()
+        })
+      }
+      this.$on('hook:destroyed', () => {
+        window.removeEventListener('resize', function () {
+          myChart.resize()
+        })
+      })
+    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-  .box {
-    background: #fff;
-    box-shadow: 0 0 10px 0 rgba(0,0,0,.1);
-    border-radius: 3px;
-    margin-bottom: 10px;
-    h1 {
-      color: #333;
-      font-size: 14px;
-      font-weight: normal;
+@import '~@/assets/styles/box.scss';
+.box-wrapper {
       display: flex;
+      justify-content: flex-start;
       align-items: center;
-      padding: 15px 20px;
-      margin: 0;
-      border-bottom: 1px solid #eee;
-    }
-    .box-wrapper {
-      display: flex;
-      justify-content: space-between;
-      padding-left: 10px;
-      padding-right: 10px;
-      padding-bottom: 10px;
-      .inner {
+      .text {
+        color: $white;
         display: flex;
-        align-items: center;
         flex-direction: column;
-        padding: 10px 20px;
-        p {
-          font-size: 20px;
-          color: $gray-3;
-          margin: 0;
-          // font-weight: bold;
-          font-family: Arial, Helvetica, sans-serif;
-        }
-        span {
-          color: $gray-9;
-          font-size: 12px;
-          margin-bottom: 8px;
-          margin-top: 8px;
-          display: block;
+        .inner {
+          display: flex;
+          align-items: center;
+          p {
+            font-size: 20px;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+          }
+          span {
+            font-size: 12px;
+            margin-bottom: 8px;
+            margin-top: 8px;
+            display: block;
+          }
         }
       }
     }
-  }
 </style>

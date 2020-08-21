@@ -4,30 +4,37 @@
 * 创建时间： 2020-08-12
  */
 <template>
-  <div class="box-wrapper">
-      <div class="inner">
-        <span>进入园区人数</span>
-        <p>{{peo.enterParkPeople}}</p>
+  <div class="box">
+      <h1>
+        <span>人员数与设备数</span>
+      </h1>
+      <div class="box-wrapper">
+          <div class="inner">
+            <p>{{peo.enterParkPeople}}</p>
+            <span>进入园区人数</span>
+          </div>
+          <div class="inner">
+            <p>{{peo.todayRegisterPeople}}</p>
+            <span>今日登记人数</span>
+          </div>
+          <div class="inner">
+            <p>{{peo.leaveParkPeople}}</p>
+            <span>离开园区人数</span>
+          </div>
       </div>
-      <div class="inner">
-        <span>今日登记人数</span>
-        <p>{{peo.todayRegisterPeople}}</p>
-      </div>
-      <div class="inner">
-        <span>离开园区人数</span>
-        <p>{{peo.leaveParkPeople}}</p>
-      </div>
-      <div class="inner">
-        <span>房车数</span>
-        <p>{{equip.touringcarNum}}</p>
-      </div>
-      <div class="inner">
-        <span>空车位</span>
-        <p>{{equip.emptyParking}}</p>
-      </div>
-      <div class="inner">
-        <span>监控楼数</span>
-        <p>{{equip.monitoringBuildNum}}</p>
+      <div class="box-wrapper">
+          <div class="inner">
+            <p>{{equip.touringcarNum}}</p>
+            <span>房车数</span>
+          </div>
+          <div class="inner">
+            <p>{{equip.emptyParking}}</p>
+            <span>空车位</span>
+          </div>
+          <div class="inner">
+            <p>{{equip.monitoringBuildNum}}</p>
+            <span>监控楼数</span>
+          </div>
       </div>
   </div>
 </template>
@@ -66,38 +73,27 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.box-wrapper {
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  .inner {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding: 10px 20px;
-    background: #fff;
-    box-shadow: 0 0 10px 0 rgba(0,0,0,.1);
-    border-radius: 3px;
-    margin-bottom: 10px;
-    margin-right: 10px;
-    min-width: 83px;
-    // &:nth-child(3n) {
-    //   margin-right: 0;
-    // }
-    p {
-      font-size: 20px;
-      color: $gray-3;
-      margin: 0;
-      // font-weight: bold;
-      font-family: Arial, Helvetica, sans-serif;
+  @import '~@/assets/styles/box.scss';
+  .box-wrapper {
+      display: flex;
+      justify-content: space-between;
+      margin: 15px 20px;
+      .inner {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        p {
+          font-size: 32px;
+          color: $yellow;
+          margin: 0;
+          font-family: Arial, Helvetica, sans-serif;
+        }
+        span {
+          color: $white;
+          font-size: 12px;
+          margin-top: 4px;
+          display: block;
+        }
+      }
     }
-    span {
-      color: $gray-9;
-      font-size: 12px;
-      margin-top: 8px;
-      margin-bottom: 8px;
-      display: block;
-    }
-  }
-}
 </style>

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <!-- <Header /> -->
+        <Header />
         <div class="main-wrapper">
             <Main />
             <Aside />
@@ -9,12 +9,12 @@
 </template>
 
 <script>
-// import Header from './header'
+import Header from './header'
 import Aside from './aside'
 import Main from './main'
 export default {
   components: {
-    // Header,
+    Header,
     Aside,
     Main
   }
@@ -26,13 +26,13 @@ export default {
   display: flex;
   flex-direction: column;
   position: absolute;
-  // top: $headerHeight;
-  top: 0;
+  top: $headerHeight;
   left: 0;
   right:0;
   bottom: 0;
 
-  background: #f1f3f5;
-  padding-bottom: 50px;
+  background: #01011b;
+  // background-image: radial-gradient(circle, #014ba0, #01011b);
+  padding-bottom: 110px;
 }
 </style>

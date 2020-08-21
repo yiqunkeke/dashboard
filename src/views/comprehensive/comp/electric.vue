@@ -6,13 +6,12 @@
 <template>
   <div class="box">
       <h1>
-        <i class="iconfont icon-shandian"></i>
-        <span>全国电力监控</span>
+        <span>全国电/水力监控</span>
       </h1>
       <div class="box-wrapper">
         <div class="inner">
           <p>{{ele.todayElectricity}}</p>
-          <span>今日用电</span>
+          <span>今日用电（度）</span>
         </div>
         <div class="inner">
           <p>{{ele.monthElectricity}}</p>
@@ -21,6 +20,20 @@
         <div class="inner">
           <p>{{ele.yearElectricity}}</p>
           <span>年度用电</span>
+        </div>
+      </div>
+      <div class="box-wrapper">
+        <div class="inner">
+          <p>{{wat.todayWater}}</p>
+          <span>今日用水（吨）</span>
+        </div>
+        <div class="inner">
+          <p>{{wat.monthWater}}</p>
+          <span>本月用水</span>
+        </div>
+        <div class="inner">
+          <p>{{wat.yearWater}}</p>
+          <span>年度用水</span>
         </div>
       </div>
   </div>
@@ -34,64 +47,53 @@ export default {
       default: () => {
         return {}
       }
+    },
+    water: {
+      type: Object,
+      default: () => {
+        return {}
+      }
     }
   },
   data () {
     return {
-      ele: this.electric
+      ele: this.electric,
+      wat: this.water
     }
   },
   watch: {
     electric (val) {
       this.ele = val
+    },
+    water (val) {
+      this.wat = val
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-  .box {
-    background: #fff;
-    box-shadow: 0 0 10px 0 rgba(0,0,0,.1);
-    padding: 5px;
-    border-radius: 3px;
-    margin-bottom: 10px;
-    h1 {
-      color: $gray-3;
-      font-size: 14px;
-      font-weight: normal;
-      display: flex;
-      align-items: center;
-      padding:10px;
-      i {
-        color: $yellow;
-        font-size: 22px;
-      }
-    }
-    .box-wrapper {
+  @import '~@/assets/styles/box.scss';
+  .box-wrapper {
       display: flex;
       justify-content: space-between;
-      padding-left: 10px;
-      padding-right: 10px;
+      margin: 15px 20px;
       .inner {
         display: flex;
         align-items: center;
         flex-direction: column;
-        padding: 10px 20px;
         p {
-          font-size: 20px;
-          color: $gray-3;
+          font-size: 32px;
+          color: $yellow;
           margin: 0;
-          // font-weight: bold;
           font-family: Arial, Helvetica, sans-serif;
         }
         span {
-          color: $gray-9;
+          color: $white;
           font-size: 12px;
-          margin-top: 8px;
+          margin-top: 4px;
           display: block;
         }
       }
     }
-  }
 </style>

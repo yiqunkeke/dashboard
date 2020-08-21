@@ -1,12 +1,14 @@
 <template>
     <el-aside width="150">
+      <div class="left">
+        <img src="../../assets/images/left.png" />
+      </div>
       <el-menu
           class="menu"
           mode="horizontal"
           :default-active="this.$route.path"
-          background-color="#2d3037"
-          text-color="#cccaca"
-          active-text-color="#409eff"
+          text-color="#00fcf9"
+          active-text-color="#fed53c"
           :collapse="isCollapse">
 
             <SidebarItem
@@ -49,6 +51,9 @@
               <el-menu-item index="4-2">选项8</el-menu-item>
             </el-submenu> -->
         </el-menu>
+      <div class="right">
+        <img src="../../assets/images/right.png" />
+      </div>
     </el-aside>
 </template>
 
@@ -74,21 +79,52 @@ export default {
 
 <style lang="scss" scoped>
 .el-aside {
-    background: #2d3037;
+    // background: #2d3037;
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
     .menu {
       display: flex;
       flex: 1;
       width: 100%;
-      height: 50px;
+      height: 106px;
       border-right: none;
       justify-content: space-between;
       ::v-deep>div {
         width: 25%;
       }
+    }
+    ::v-deep .el-menu.el-menu--horizontal {
+      border: none;
+      background-image: linear-gradient(to right, #01011b, #021b60, #01011b);
+      background-color: transparent !important;
+      border-top: 2px solid #00379e;
+      .el-menu-item {
+        background-color: transparent !important;
+        border-bottom-color: transparent !important;
+        background: url('../../assets/images/default.png') no-repeat center;
+      }
+      .el-menu-item.is-active {
+        background: url('../../assets/images/active.png') no-repeat center;
+        // background-size: 100% 100%;
+      }
+      .el-submenu__title:hover, .el-menu-item:hover {
+        color: #fed53c !important;
+      }
+    }
+    .left {
+      background: #01011b;
+      // height: 106px;
+      // background-image: linear-gradient(to right, #07072e, #01011b);
+    }
+    .right {
+      background: #01011b;
+      // height: 106px;
+      // background-image: linear-gradient(to left, #07072e, #01011b);
     }
   }
 </style>

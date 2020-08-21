@@ -1,0 +1,18 @@
+.box {
+    border-radius: 10px;
+    margin-bottom: 15px;
+    background-clip:padding-box,border-box;
+    background-origin:padding-box,border-box;
+    background-image:linear-gradient(to right, #091233, #0a2569),linear-gradient(90deg,#00379d,#02195f,#00379d);
+    border:2px transparent solid;
+    h1 {
+      color: #fff;
+      font-size: 16px;
+      font-weight: normal;
+      padding-left: 20px;
+      background-image:linear-gradient(to right, #283999, #0a296c);
+      border-radius: 7px 10px 0 0;
+      height: 40px;
+      line-height: 40px;
+    }
+  }

@@ -17,9 +17,9 @@
       </template>
       <template v-else>
           <el-menu-item :index="item.path" @click="handleClick(item)">
-            <i :class="iconClass(item.meta.icon)"></i>
+            <!-- <i :class="iconClass(item.meta.icon)"></i> -->
             <span slot="title">{{item.meta.title}}</span>
-        </el-menu-item>
+          </el-menu-item>
       </template>
   </div>
 </template>
@@ -66,8 +66,8 @@ export default {
 .el-submenu__title {
   padding-left: 16px !important;
   font-size: 13px !important;
-  height: 50px !important;
-  line-height: 50px !important;
+  // height: 50px !important;
+  // line-height: 50px !important;
   display: flex;
   align-items: center;
 }
@@ -78,9 +78,10 @@ export default {
   color: #fff !important;
 }
 .el-menu-item {
-  height: 50px !important;
-  line-height: 50px !important;
-  font-size: 13px !important;
+  height: 106px !important;
+  line-height: 106px !important;
+  font-size: 30px !important;
+  font-weight: bold;
   display: flex;
   justify-content: center;
 }

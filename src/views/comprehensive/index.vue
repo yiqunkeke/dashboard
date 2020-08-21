@@ -4,31 +4,26 @@
       <el-col :span="6">
         <!-- 天气 -->
         <weatherComp :weather="weather"/>
-        <!-- 电力监控 -->
-        <electricComp :electric="electric"/>
-        <!-- 水力 -->
-        <waterComp :water="water"/>
+        <!-- 电/水力监控 -->
+        <electricComp :electric="electric" :water="water"/>
         <!-- 海草屋客房统计 -->
         <seaweedComp :seawead="seawead"/>
         <!-- 拖挂房车客房统计 -->
         <touringcarComp :touringcar="touringcar"/>
       </el-col>
-      <el-col :span="18">
-        <!-- 上 -->
-        <el-row :gutter="20">
-          <el-col :span="15">
-            <boardComp :power="power"/>
-          </el-col>
-          <el-col :span="9">
-            <peopleComp :people="people" :equipment="equipment"/>
-            <activityComp :activity="activity"/>
-          </el-col>
-        </el-row>
-        <!-- 下 -->
-        <el-row :gutter="20">
-          <!-- 营地营收 -->
-          <incomeComp :income="income"/>
-        </el-row>
+      <el-col :span="12">
+        <!-- 中间 -->
+        <boardComp :power="power"/>
+        <!-- 营地营收 -->
+        <incomeComp :income="income"/>
+      </el-col>
+      <el-col :span="6">
+        <!-- 活动情况预测 -->
+        <activityComp :activity="activity"/>
+        <!-- 人员统计 -->
+        <peopleComp :people="people" :equipment="equipment"/>
+        <!-- 当月营收 -->
+        <incomeMonthComp :income="income"/>
       </el-col>
     </el-row>
   </div>
@@ -37,25 +32,25 @@
 <script>
 import weatherComp from './comp/weather'
 import electricComp from './comp/electric'
-import waterComp from './comp/water'
 import seaweedComp from './comp/seawead'
 import touringcarComp from './comp/touringcar'
 import boardComp from './comp/board'
 import peopleComp from './comp/people'
 import activityComp from './comp/activity'
 import incomeComp from './comp/income'
+import incomeMonthComp from './comp/monthIncome'
 import { weatherData, electricData, waterData, roomData, powerTotal, peopleData, equipmentData, activityData, incomeData } from '@/api/comprehensive'
 export default {
   components: {
     weatherComp,
     electricComp,
-    waterComp,
     seaweedComp,
     touringcarComp,
     boardComp,
     peopleComp,
     activityComp,
-    incomeComp
+    incomeComp,
+    incomeMonthComp
   },
   data () {
     return {

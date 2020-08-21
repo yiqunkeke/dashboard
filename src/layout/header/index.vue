@@ -1,28 +1,26 @@
 <template>
   <el-header>
     <el-row>
-      <el-col :span="12" class="header-logo">
+      <el-col :span="8" class="header-logo">
         <img src="../../assets/logo.png">
-        <h1>
-          <strong>智慧园区数据平台</strong>
-          <em>smart park data platform</em>
-        </h1>
-        <h2>{{systemName}}</h2>
       </el-col>
-      <el-col :span="12" class="header-right">
+      <el-col :span="8" class="slogan">
+        智慧营地大数据看板
+      </el-col>
+      <el-col :span="8" class="header-right">
         <el-dropdown @command="handleCommand">
-          <span class="el-dropdown-link">
-            {{username}}<i class="el-icon-arrow-down el-icon--right"></i>
-          </span>
-          <el-dropdown-menu slot="dropdown" class="list">
-            <el-dropdown-item command="updatePwd">
-              <i class="iconfont icon-mima"></i>修改密码
-            </el-dropdown-item>
-            <el-dropdown-item command="logout">
-              <i class="iconfont icon-tuichu"></i>退出
-            </el-dropdown-item>
-          </el-dropdown-menu>
-        </el-dropdown>
+        <span class="el-dropdown-link">
+          {{username}}-{{systemName}}<i class="el-icon-arrow-down el-icon--right"></i>
+        </span>
+        <el-dropdown-menu slot="dropdown" class="list">
+          <el-dropdown-item command="updatePwd">
+            <i class="iconfont icon-mima"></i>修改密码
+          </el-dropdown-item>
+          <el-dropdown-item command="logout">
+            <i class="iconfont icon-tuichu"></i>退出
+          </el-dropdown-item>
+        </el-dropdown-menu>
+      </el-dropdown>
       </el-col>
     </el-row>
     <dialogCom
@@ -132,56 +130,46 @@ export default {
 }
 .el-header {
   z-index: 999;
-  background: #fff;
-  display: block;
   width: 100%;
+  padding:0;
+  height: $headerHeight !important;
+  background: #01011b;
   position: fixed;
-  box-shadow: 0 1px 3px #dbdbdb;
-  padding-left: 5px;
+  // background-image: radial-gradient(circle, #05112f 10%, #06266a 10%);
   .header-logo {
-    display: flex;
-    align-items: center;
+    background-image: linear-gradient(to right, #05112f, #06266a);
+    border-bottom: 2px solid #224cb3;
+    height: 68px;
+    line-height: 68px;
     img {
-      width: 30px;
-      height: auto;
-      margin-right: 5px;
+      width: 187px;
+      height: 50px;
+      margin-top: 9px;
+      margin-left: 50px;
     }
-    h1 {
-      color: $main;
-      font-size: 22px;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
+  }
+  .slogan {
+      background: url('../../assets/images/sloganBg.png') no-repeat;
+      background-size: 100% 100%;
+      color: #00fcff;
+      font-size: 40px;
+      font-weight: bold;
       height: $headerHeight;
-      justify-content: center;
-      strong {
-        font-size: 19px;
-        font-weight: normal;
-      }
-      em {
-        font-size: 12px;
-        font-style: normal;
-        display: block;
-        font-weight: normal;
-      }
-    }
-    h2 {
-      color: $main;
-      font-size: 14px;
-      font-weight: normal;
-      margin-left: 5px;
-    }
+      line-height: $headerHeight;
+      text-align: center;
   }
   .header-right {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    height: $headerHeight;
-    line-height: $headerHeight;
+    background-image: linear-gradient(to right, #072362, #05112f);
+    border-bottom: 2px solid #224cb3;
+    height: 68px;
+    line-height: 68px;
+    padding-right: 20px;
     .el-dropdown-link {
       cursor: pointer;
-      color: #333333;
+      color: #fff;
       font-size: 12px;
     }
     .el-icon-arrow-down {
