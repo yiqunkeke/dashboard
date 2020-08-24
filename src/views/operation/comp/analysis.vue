@@ -9,7 +9,7 @@
         设备报修情况分析
       </h1>
       <div class="box-wrapper">
-        <el-table :data="analy">
+        <el-table :data="analy" stripe>
                 <el-table-column
                     prop="rank"
                     label="排名"
@@ -62,26 +62,27 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .box {
-    background: #fff;
-    box-shadow: 0 0 10px 0 rgba(0,0,0,.1);
-    border-radius: 3px;
-    margin-bottom: 10px;
-    h1 {
-      color: #333;
-      font-size: 14px;
-      font-weight: normal;
-      display: flex;
-      align-items: center;
-      padding: 15px 20px;
-      margin: 0;
-      border-bottom: 1px solid #eee;
+@import '~@/assets/styles/box.scss';
+::v-deep .el-table--striped .el-table__body tr.el-table__row--striped td {
+  background: rgba($color: #0184ff, $alpha: 0.1);
+}
+::v-deep .el-table--enable-row-hover .el-table__body tr:hover>td {
+  background: rgba($color: #0184ff, $alpha: 0.2);
+}
+::v-deep .el-table {
+      background-color: transparent;
+      color: #fff;
+      thead {
+        color: $white;
+      }
+      th, tr {
+        background-color: transparent;
+      }
+      td, th.is-leaf {
+        border-bottom: none;
+      }
     }
-    .box-wrapper {
-        padding:10px;
-        .el-pagination {
-          margin-top: 10px;
-        }
+    .el-table::before {
+        height: 0;
     }
-  }
 </style>

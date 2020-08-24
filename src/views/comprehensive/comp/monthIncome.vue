@@ -12,7 +12,7 @@
         {{income}}
       </div> -->
       <div class="chart">
-        <div ref="chart2" :style="{width: '100%', height: '220px'}"></div>
+        <div ref="chart2" :style="{width: '100%', height: '200px'}"></div>
       </div>
   </div>
 </template>
@@ -68,18 +68,19 @@ export default {
             trigger: 'item',
             formatter: '{a} <br/>{b} : {c} ({d}%)'
           },
-          color: ['#409eff', '#4fcb74', '#fbd438', '#f04864', '#9860e5', '#37cbcb', '#37a2da', '#e7bcf3', '#8378ea', '#96bfff', '#ff9f7f'],
+          // color: ['#409eff', '#4fcb74', '#fbd438', '#f04864', '#9860e5', '#37cbcb', '#37a2da', '#e7bcf3', '#8378ea', '#96bfff', '#ff9f7f'],
+          color: ['#ffd074', '#00deff', '#0080f8', '#1b51ff', '#2a00ff', '#518ddf'],
           legend: {
-              orient: 'vertical',
-              right: 10,
-              top: 20,
-              data: this.xDataCircle,
-              textStyle:{
-                color:'#ffffff',
-              },
-              icon:'circle',
-              itemWidth:10,
-              itemHeight:10
+            orient: 'vertical',
+            right: 10,
+            top: 20,
+            data: this.xDataCircle,
+            textStyle: {
+              color: '#ffffff'
+            },
+            icon: 'circle',
+            itemWidth: 10,
+            itemHeight: 10
           },
           series: [
             {
@@ -107,7 +108,8 @@ export default {
               // },
               label: {
                 // formatter: '{a|{a}}{abg|}\n{hr|}\n  {b|{b}：}{c}  {per|{d}%}  ',
-                formatter: '{per|{d}%}',
+                // formatter: '{per|{d}%}',
+                formatter: '{c}',
                 // backgroundColor: '#09153f',
                 // borderColor: '#00fcf9',
                 // borderWidth: 1,
@@ -141,7 +143,7 @@ export default {
                 //     lineHeight: 33
                 //   },
                   per: {
-                    color: '#00fcf9',
+                    color: '#00fcf9'
                     // backgroundColor: '#09153f',
                     // padding: [2, 4],
                     // borderRadius: 2

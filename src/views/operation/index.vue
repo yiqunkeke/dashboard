@@ -6,29 +6,20 @@
         <workOrderComp :workOrder="workOrder"/>
         <!-- 报修设备占比 -->
         <equipRatioComp :equipRatio="equipRatioData"/>
+      </el-col>
+      <el-col :span="12">
+        <!-- 中间 -->
+        <boardComp :total="total" :totalPos="totalPos"/>
+        <!-- 订单列表 -->
+        <listComp :listData="list"/>
+      </el-col>
+      <el-col :span="6">
         <!-- 设备报警情况分析 -->
         <analysisComp :analysis="analysis"/>
-      </el-col>
-      <el-col :span="18">
-        <!-- 上 -->
-        <el-row :gutter="20">
-          <el-col :span="15">
-            <!-- 中间 -->
-            <boardComp :total="total" :totalPos="totalPos"/>
-          </el-col>
-          <el-col :span="9">
-            <!-- 运维态势分析 -->
-            <stateComp :stateData="stateData"/>
-            <!-- 任务完成率 -->
-            <taskRatioComp :taskData="taskData"/>
-          </el-col>
-        </el-row>
-
-        <!-- 下 -->
-        <el-row :gutter="20">
-          <!-- 订单列表 -->
-          <listComp :listData="list"/>
-        </el-row>
+        <!-- 运维态势分析 -->
+        <stateComp :stateData="stateData"/>
+        <!-- 任务完成率 -->
+        <taskRatioComp :taskData="taskData"/>
       </el-col>
     </el-row>
   </div>
@@ -107,7 +98,7 @@ export default {
     // 总数
     async getTotalPosition () {
       this.totalPos = await totalPosition()
-    },
+    }
   }
 }
 </script>

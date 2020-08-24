@@ -73,7 +73,12 @@ export default {
           },
           color: ['#409eff', '#FFC82C'],
           legend: {
-            data: this.legendData
+            data: this.legendData,
+            textStyle: {
+              color: '#ffffff'
+            },
+            right: 10,
+            top: 15
           },
           grid: {
             left: '3%',
@@ -84,15 +89,29 @@ export default {
           xAxis: {
             type: 'category',
             boundaryGap: false,
-            data: this.xAxisData
+            data: this.xAxisData,
+            axisLine: {
+              lineStyle: {
+                color: '#fff', // 颜色
+                width: 0 // 粗细
+              }
+            }
           },
           yAxis: {
             type: 'value',
             splitLine: { // 网格线
               lineStyle: {
-                type: 'dashed' // 设置网格线类型 dotted：虚线   solid:实线
+                type: 'dashed', // 设置网格线类型 dotted：虚线   solid:实线
+                color: ['#071b6d'],
+                width: 1
               },
               show: true // 隐藏或显示
+            },
+            axisLine: {
+              lineStyle: {
+                color: '#fff', // 颜色
+                width: 0 // 粗细
+              }
             }
           },
           series: this.seriesData
@@ -114,20 +133,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .box {
-    background: #fff;
-    box-shadow: 0 0 10px 0 rgba(0,0,0,.1);
-    border-radius: 3px;
-    margin-bottom: 10px;
-    h1 {
-      color: #333;
-      font-size: 14px;
-      font-weight: normal;
-      display: flex;
-      align-items: center;
-      padding: 15px 20px;
-      margin: 0;
-      border-bottom: 1px solid #eee;
-    }
-  }
+@import '~@/assets/styles/box.scss';
 </style>

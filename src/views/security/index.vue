@@ -2,14 +2,12 @@
   <div>
     <el-row :gutter="20">
       <el-col :span="6">
+        <!-- 人脸底库 -->
+        <faceComp :face="face" :license="license"/>
         <!-- 人流量统计 -->
         <peoStatiComp :peoStatic="peoStatic"/>
         <!-- 车流量统计 -->
         <carStatiComp :carStatic="carStatic"/>
-        <!-- 人脸底库 -->
-        <faceComp :face="face"/>
-        <!-- 车牌底库 -->
-        <licenseComp :license="license"/>
       </el-col>
       <el-col :span="12">
         <!-- 中间统计 -->
@@ -19,7 +17,7 @@
       </el-col>
       <el-col :span="6">
         <!-- 视频监控 -->
-        <videoComp />
+        <videoComp :video="video"/>
         <!-- 行为统计 -->
         <behaveComp :behavior="behavior"/>
         <!-- 摄像头在线情况 -->
@@ -33,19 +31,18 @@
 import peoStatiComp from './comp/peoStatistic'
 import carStatiComp from './comp/carStatistic'
 import faceComp from './comp/face'
-import licenseComp from './comp/license'
 import boardComp from './comp/board'
 import dynamiComp from './comp/dynamic'
 import videoComp from './comp/video'
 import behaveComp from './comp/behavior'
 import cameraComp from './comp/cameraOnline'
 import { peoStatistic, carStatistic, faceData, lisencePlate, peopleData, cameraData, dynamicData, behaviorData, cameraOnline } from '@/api/security'
+import { videoData } from '@/api/fire'
 export default {
   components: {
     peoStatiComp,
     carStatiComp,
     faceComp,
-    licenseComp,
     boardComp,
     dynamiComp,
     videoComp,
@@ -62,7 +59,8 @@ export default {
       camera: {},
       dynamic: [],
       cameraOnline: {},
-      behavior: {}
+      behavior: {},
+      video: []
     }
   },
   mounted () {
@@ -75,6 +73,7 @@ export default {
     this.getDynamic()
     this.getBehavior()
     this.getCameraOnline()
+    this.getVideo()
   },
   methods: {
     // 人流量统计
@@ -112,6 +111,10 @@ export default {
     // 位置摄像头信息
     async getCameraOnline () {
       this.cameraOnline = await cameraOnline()
+    },
+    // 视频监控
+    async getVideo () {
+      this.video = await videoData()
     }
   }
 }

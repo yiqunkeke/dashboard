@@ -31,7 +31,7 @@ export default {
     return {
       inc: this.income,
       xData: [],
-      seriesData: [], // 柱状图数据
+      seriesData: [] // 柱状图数据
     }
   },
   watch: {
@@ -61,8 +61,8 @@ export default {
             },
             axisLine: {
               lineStyle: {
-                  color: '#fff', // 颜色
-                  width: 0 // 粗细
+                color: '#fff', // 颜色
+                width: 0 // 粗细
               }
             }
           },
@@ -78,8 +78,8 @@ export default {
             },
             axisLine: {
               lineStyle: {
-                  color: '#fff', // 颜色
-                  width: 0 // 粗细
+                color: '#fff', // 颜色
+                width: 0 // 粗细
               }
             }
           },
@@ -88,7 +88,7 @@ export default {
           barWidth: 15,
           series: [{
             data: this.seriesData,
-            type: 'bar',
+            type: 'bar'
             // showBackground: true
           }]
         }

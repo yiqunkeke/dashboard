@@ -95,8 +95,8 @@ export default {
               // center: ['50%', '60%'],
               avoidLabelOverlap: false,
               label: {
-                  show: false,
-                  position: 'center'
+                show: false,
+                position: 'center'
               },
               data: this.seriesDataCircle,
               emphasis: {
@@ -109,7 +109,7 @@ export default {
             }
           ]
         }
-      myChart.setOption(option)
+        myChart.setOption(option)
         window.addEventListener('resize', function () {
           myChart.resize()
         })

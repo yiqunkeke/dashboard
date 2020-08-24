@@ -2,11 +2,6 @@
   <div class="box">
       <!-- {{power}} -->
       <div class="box-wrapper">
-        <!-- 水表总用量：{{power.waterTotal}}
-      电表总用量：{{power.powerTotal}}
-      本月用水量：{{power.monthWater}}
-      本月用电量：{{power.monthElectricity}}
-      本月用气量：{{power.monthGas}} -->
         <div class="month">
           <h2>抄表系统</h2>
           <div class="line">
@@ -73,7 +68,7 @@ export default {
     color: $white;
     h2 {
       font-size: 16px;
-      margin-bottom: 25px;  
+      margin-bottom: 25px;
     }
     .line {
       display: flex;

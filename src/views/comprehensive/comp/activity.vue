@@ -5,7 +5,7 @@
       </h1>
       <div class="box-wrapper">
         <!-- {{activity}} -->
-        <div ref="chart" :style="{width: '100%', height: '220px'}"></div>
+        <div ref="chart" :style="{width: '100%', height: '188px'}"></div>
       </div>
   </div>
 </template>
@@ -55,8 +55,8 @@ export default {
             data: this.xData,
             axisLine: {
               lineStyle: {
-                  color: '#fff', // 颜色
-                  width: 0 // 粗细
+                color: '#fff', // 颜色
+                width: 0 // 粗细
               }
             }
           },
@@ -64,14 +64,14 @@ export default {
             type: 'value',
             splitLine: { // 网格线
               lineStyle: {
-                type: 'dashed', // 设置网格线类型 dotted：虚线   solid:实线
+                type: 'dashed' // 设置网格线类型 dotted：虚线   solid:实线
               },
               show: false // 隐藏或显示
             },
             axisLine: {
               lineStyle: {
-                  color: '#fff', // 颜色
-                  width: 0 // 粗细
+                color: '#fff', // 颜色
+                width: 0 // 粗细
               }
             }
           },
@@ -100,7 +100,8 @@ export default {
               normal: {
                 color: '#fe7699', // 改变折线点的颜色
                 lineStyle: {
-                  color: '#fe7699' // 改变折线颜色
+                  color: '#fe7699', // 改变折线颜色
+                  width: 5
                 }
               }
             }
