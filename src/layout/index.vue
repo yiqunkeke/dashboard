@@ -34,5 +34,6 @@ export default {
   background: #01011b;
   // background-image: radial-gradient(circle, #014ba0, #01011b);
   padding-bottom: 110px;
+  overflow: none;
 }
 </style>

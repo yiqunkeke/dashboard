@@ -48,6 +48,9 @@ export default {
       if (chart) {
         const myChart = this.$echarts.init(chart)
         const option = {
+          tooltip: {
+            transitionDuration:0,//echart防止tooltip的抖动
+          },
           xAxis: {
             type: 'category',
             data: this.xData,

@@ -69,7 +69,8 @@ export default {
           //     text: '折线图堆叠'
           // },
           tooltip: {
-            trigger: 'axis'
+            trigger: 'axis',
+            transitionDuration:0,//echart防止tooltip的抖动
           },
           color: ['#409eff', '#FFC82C'],
           legend: {

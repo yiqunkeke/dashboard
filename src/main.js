@@ -18,7 +18,7 @@ Vue.use(vuescroll, {
   ops: {
     vuescroll: {
       mode: 'native',
-      sizeStrategy: 'percent',
+      sizeStrategy: 'percent', // number/percent
       detectResize: true
     },
     scrollPanel: {},
@@ -28,8 +28,8 @@ Vue.use(vuescroll, {
       size: '6px',
       specifyBorderRadius: false,
       gutterOfEnds: null,
-      gutterOfSide: '2px',
-      keepShow: false
+      gutterOfSide: '0px',
+      keepShow: true
     },
     bar: {
       // hoverStyle: true,

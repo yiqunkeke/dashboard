@@ -83,7 +83,9 @@ export default {
               }
             }
           },
-          tooltip: {},
+          tooltip: {
+            transitionDuration:0,//echart防止tooltip的抖动
+          },
           color: ['#409eff'],
           barWidth: 15,
           series: [{

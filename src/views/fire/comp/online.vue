@@ -60,7 +60,8 @@ export default {
           // },
           tooltip: {
             trigger: 'item',
-            formatter: '{a} <br/>{b} : {c} ({d}%)'
+            formatter: '{a} <br/>{b} : {c} ({d}%)',
+            transitionDuration:0,//echart防止tooltip的抖动
           },
           color: ['#ffd074', '#00deff', '#0080f8', '#1b51ff', '#2a00ff', '#518ddf'],
           legend: {

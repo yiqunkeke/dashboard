@@ -76,7 +76,8 @@ export default {
           tooltip: {
             trigger: 'item',
             formatter: '{a} <br/>{b} : {c} ({d}%)',
-            position: 'inside'
+            position: 'inside',
+            transitionDuration:0,//echart防止tooltip的抖动
           },
           legend: {
             orient: 'vertical',

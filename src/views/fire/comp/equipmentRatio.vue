@@ -79,6 +79,9 @@ export default {
               }
             }
           },
+          tooltip: {
+            transitionDuration:0,//echart防止tooltip的抖动
+          },
           grid: { // 解决y轴数值太大，展示不全
             left: 55
           },

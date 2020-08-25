@@ -56,7 +56,9 @@ export default {
       if (chart) {
         const myChart = this.$echarts.init(chart)
         const option = {
-          tooltip: {},
+          tooltip: {
+            transitionDuration:0,//echart防止tooltip的抖动
+          },
           legend: {
             data: ['预算分配', '实际开销']
           },

@@ -79,7 +79,8 @@ export default {
           tooltip: {
             trigger: 'item',
             formatter: '{a} <br/>{b} : {c} ({d}%)',
-            position: 'inside'
+            position: 'inside',
+            transitionDuration:0,//echart防止tooltip的抖动
           },
           color: ['#fc6c6c', '#222c4f'],
           // legend: {
@@ -94,6 +95,7 @@ export default {
               radius: ['50%', '75%'],
               // center: ['50%', '60%'],
               avoidLabelOverlap: false,
+              // hoverAnimation:false, // 禁止鼠标移动变大
               label: {
                 show: false,
                 position: 'center'

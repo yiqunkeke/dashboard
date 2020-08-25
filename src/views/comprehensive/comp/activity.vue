@@ -80,6 +80,7 @@ export default {
           },
           tooltip: {
             trigger: 'axis',
+            transitionDuration:0,//echart防止tooltip的抖动
             axisPointer: {
               type: 'cross',
               label: {
