@@ -5,7 +5,7 @@
       </h1> -->
       <div class="box-wrapper">
           <!-- {{listData}} -->
-        <el-table :data="listData" stripe>
+        <el-table :data="listData" stripe tooltip-effect="light">
                 <el-table-column
                     prop="equipmentCode"
                     label="设备编号"
@@ -13,6 +13,7 @@
                 </el-table-column>
                 <el-table-column
                     prop="equipmentName"
+                    show-overflow-tooltip
                     label="设备名称">
                 </el-table-column>
                 <el-table-column
@@ -28,6 +29,7 @@
                 <el-table-column
                     prop="repairTime"
                     label="报修时间"
+                    show-overflow-tooltip
                     width="100">
                 </el-table-column>
                 <el-table-column

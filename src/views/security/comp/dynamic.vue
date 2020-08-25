@@ -10,17 +10,17 @@
               {{item.message}}-----{{item.date}} -----{{item.dateInfo}}
           </li>
       </ul> -->
-      <el-table :data="dynamic" stripe>
-                <el-table-column
-                    prop="date"
-                    label="日期"
-                    width="120">
-                </el-table-column>
-                <el-table-column
-                    prop="message"
-                    label="详情">
-                </el-table-column>
-        </el-table>
+      <el-table :data="dynamic" stripe height="270">
+          <el-table-column
+              prop="date"
+              label="日期"
+              width="120">
+          </el-table-column>
+          <el-table-column
+              prop="message"
+              label="详情">
+          </el-table-column>
+      </el-table>
   </div>
 </template>
 

@@ -21,7 +21,9 @@ Vue.use(vuescroll, {
       sizeStrategy: 'percent', // number/percent
       detectResize: true
     },
-    scrollPanel: {},
+    scrollPanel: {
+      // initialScrollY: 0
+    },
     rail: {
       background: '#01a99a',
       opacity: 0,

@@ -6,7 +6,7 @@ module.exports = {
     config
       .plugin('html')
       .tap(args => {
-        args[0].title = '智慧园区数据平台'
+        args[0].title = 'SINDAR智慧营地'
         return args
       })
   },
@@ -24,6 +24,7 @@ module.exports = {
       // http://10.138.130.1:35359/user-auth-api  /user/public/login
       '/api': {
         target: 'http://10.138.130.1:35359',
+        // target: 'http://10.98.4.55:8000', // 集群ip+端口
         changeOrigin: true,
         pathRewrite: {
           '^/api': '/user-auth-api'
@@ -32,6 +33,7 @@ module.exports = {
       // 综合态势
       '/camp-kanban-api': {
         target: 'http://10.138.130.1:32894',
+        // target: 'http://10.110.225.171:7011', // 集群ip+端口
         changeOrigin: true,
         pathRewrite: {
           '^/camp-kanban-api': '/camp-kanban-api'

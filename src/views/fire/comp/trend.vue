@@ -9,7 +9,7 @@
         设备报警类型趋势
       </h1>
       <!-- {{onlineStatus}} -->
-      <div ref="chart" :style="{width: '100%', height: '300px'}"></div>
+      <div ref="chart" :style="{width: '100%', height: '342px'}"></div>
   </div>
 </template>
 

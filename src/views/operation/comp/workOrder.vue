@@ -4,7 +4,9 @@
         今日工单各维度统计
       </h1>
       <!-- {{work}} -->
-      <div ref="chart" :style="{width: '100%', height: '200px'}"></div>
+      <div class="box-wrapper">
+        <div ref="chart" :style="{width: '100%', height: '200px'}"></div>
+      </div>
   </div>
 </template>
 
@@ -148,4 +150,8 @@ export default {
 
 <style lang="scss" scoped>
 @import '~@/assets/styles/box.scss';
+.box-wrapper {
+  padding-top: 71px;
+  padding-bottom: 71px;
+}
 </style>

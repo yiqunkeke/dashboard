@@ -5,7 +5,7 @@
           车流量统计
       </h1>
       <!-- {{car}} -->
-      <div ref="chart" :style="{width: '100%', height: '270px'}"></div>
+      <div ref="chart" :style="{width: '100%', height: '180px'}"></div>
   </div>
 </template>
 

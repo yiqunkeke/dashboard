@@ -5,7 +5,7 @@
       </h1>
       <div class="box-wrapper">
           <!-- {{taskData}} -->
-          <div ref="chart" :style="{width: '100%', height: '250px'}"></div>
+          <div ref="chart" :style="{width: '100%', height: '243px'}"></div>
       </div>
   </div>
 </template>

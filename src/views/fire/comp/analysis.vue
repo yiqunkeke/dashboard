@@ -35,7 +35,7 @@
                     sortable>
                 </el-table-column>
         </el-table>
-        <el-pagination
+        <!-- <el-pagination
             background
             small
             @size-change="handleSizeChange"
@@ -44,7 +44,7 @@
             :page-size="pageSize"
             layout="total, prev, pager, next"
             :total="total">
-        </el-pagination>
+        </el-pagination> -->
       </div>
   </div>
 </template>

@@ -9,7 +9,9 @@
         报修设备占比
       </h1>
       <!-- {{ratio}} -->
-      <div ref="chart" :style="{width: '100%', height: '280px'}"></div>
+      <div class="box-wrapper">
+        <div ref="chart" :style="{width: '100%', height: '375px'}"></div>
+      </div>
   </div>
 </template>
 
@@ -122,4 +124,8 @@ export default {
 
 <style lang="scss" scoped>
 @import '~@/assets/styles/box.scss';
+.box-wrapper {
+  padding-top: 10px;
+  padding-bottom: 40px;
+}
 </style>

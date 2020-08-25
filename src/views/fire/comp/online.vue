@@ -9,7 +9,9 @@
         消防设备在线情况
       </h1>
       <!-- {{onlineStatus}} -->
-      <div ref="chart2" :style="{width: '100%', height: '200px'}"></div>
+      <div class="box-wrapper">
+        <div ref="chart2" :style="{width: '100%', height: '200px'}"></div>
+      </div>
   </div>
 </template>
 
@@ -164,4 +166,8 @@ export default {
 
 <style lang="scss" scoped>
   @import '~@/assets/styles/box.scss';
+  .box-wrapper {
+    padding-top: 2px;
+    padding-bottom: 3px;
+  }
 </style>

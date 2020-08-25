@@ -8,7 +8,7 @@
         <span>总人流量: {{peo.allPeople}} </span>
         <em>日访问量: {{peo.todayPeople}}</em>
       </div>
-      <div ref="chart" :style="{width: '100%', height: '220px'}"></div>
+      <div ref="chart" :style="{width: '100%', height: '180px'}"></div>
   </div>
 </template>
 
@@ -142,7 +142,7 @@ export default {
 .total {
     display: flex;
     font-size: 14px;
-    padding: 24px 34px 0;
+    padding: 14px 34px 0;
     justify-content: space-between;
     span {
         color: $white;
