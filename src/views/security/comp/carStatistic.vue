@@ -5,7 +5,9 @@
           车流量统计
       </h1>
       <!-- {{car}} -->
-      <div ref="chart" :style="{width: '100%', height: '180px'}"></div>
+      <div class="chart">
+        <div ref="chart" :style="{width: '100%', height: '100%'}"></div>
+      </div>
   </div>
 </template>
 
@@ -107,13 +109,13 @@ export default {
                 }
               }
             },
-            markPoint: {
-              symbol: 'pin',
-              data: [
-                { type: 'max', name: '最大值' },
-                { type: 'min', name: '最小值' }
-              ]
-            }
+            // markPoint: {
+            //   symbol: 'pin',
+            //   data: [
+            //     { type: 'max', name: '最大值' },
+            //     { type: 'min', name: '最小值' }
+            //   ]
+            // }
           }]
         }
         myChart.setOption(option)
@@ -133,4 +135,7 @@ export default {
 
 <style lang="scss" scoped>
 @import '~@/assets/styles/box.scss';
+.chart {
+  height: 100%;
+}
 </style>

@@ -1,26 +1,14 @@
 <template>
   <el-row :gutter="20">
       <el-col :span="6">
-        <!-- <div class="boxs">
-          1
-        </div>
-        <div class="boxs">
-          2
-        </div>
-        <div class="boxs">
-          3
-        </div>
-        <div class="boxs">
-          4
-        </div> -->
         <!-- 天气 -->
-        <weatherComp :weather="weather"/>
+        <weatherComp :weather="weather" style="flex: 0.5"/>
         <!-- 电/水力监控 -->
-        <electricComp :electric="electric" :water="water"/>
+        <electricComp :electric="electric" :water="water" style="flex:2"/>
         <!-- 海草屋客房统计 -->
-        <seaweedComp :seawead="seawead"/>
+        <seaweedComp :seawead="seawead" style="flex:2"/>
         <!-- 拖挂房车客房统计 -->
-        <touringcarComp :touringcar="touringcar"/>
+        <touringcarComp :touringcar="touringcar" style="flex:2"/>
       </el-col>
       <el-col :span="12">
         <!-- 中间 -->
@@ -135,12 +123,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// .row {
-//   display: flex;
-//   width: 100%;
-//   .col {
-//     display: flex;
-//     flex-direction: column;
-//   }
-// }
+.el-row {
+  display: flex;
+  width: 100%;
+  .el-col{
+    display: flex;
+    flex-direction: column;
+  }
+}
 </style>

@@ -45,11 +45,11 @@ export default {
   @import '~@/assets/styles/box.scss';
   .list {
       li {
-        font-size: 14px;
+        font-size: .14rem;
         color: $white;
-        height: 40px;
-        line-height: 40px;
-        padding: 0 30px;
+        height: .4rem;
+        line-height: .4rem;
+        padding: 0 .3rem;
         display: flex;
         justify-content: space-between;
         &:nth-child(odd) {

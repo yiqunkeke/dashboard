@@ -10,7 +10,7 @@
               {{item.message}}-----{{item.date}} -----{{item.dateInfo}}
           </li>
       </ul> -->
-      <el-table :data="dynamic" stripe height="270">
+      <el-table :data="dynamic" stripe>
           <el-table-column
               prop="date"
               label="日期"
@@ -66,6 +66,10 @@ export default {
       }
       td, th.is-leaf {
         border-bottom: none;
+      }
+      td, th {
+        padding: .08rem;
+        font-size: .12rem;
       }
     }
     .el-table::before {

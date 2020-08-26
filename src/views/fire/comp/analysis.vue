@@ -101,11 +101,12 @@ export default {
 .box-wrapper {
     .total {
       color: #00fcf9;
-      padding-top: 15px;
+      padding-top: .15rem;
       display: flex;
       justify-content: space-between;
-      padding-left: 33px;
-      padding-right: 33px;
+      padding-left: .33rem;
+      padding-right: .33rem;
+      font-size: .14rem;
     }
     ::v-deep .el-table {
       background-color: transparent;
@@ -119,10 +120,14 @@ export default {
       td, th.is-leaf {
         border-bottom: none;
       }
+      td, th {
+        padding: 0;
+        font-size: 0.12rem;
+      }
     }
     .el-pagination {
-      margin-top: 10px;
-      margin-bottom: 10px;
+      margin-top: .1rem;
+      margin-bottom: .1rem;
     }
     }
 </style>

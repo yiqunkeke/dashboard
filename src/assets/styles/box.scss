@@ -1,19 +1,21 @@
 .box {
-    border-radius: 10px;
-    margin-bottom: 15px;
+    border-radius: .1rem;
+    margin-bottom: .15rem;
     background-clip:padding-box,border-box;
     background-origin:padding-box,border-box;
     background-image:linear-gradient(to right, #091233, #0a2569),linear-gradient(90deg,#00379d,#02195f,#00379d);
     border: 2px transparent solid;
-    // flex: auto;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
     h1 {
       color: #fff;
-      font-size: 16px;
+      font-size: 0.16rem;
       font-weight: normal;
-      padding-left: 20px;
+      padding-left: .2rem;
       background-image:linear-gradient(to right, #283999, #0a296c);
-      border-radius: 7px 10px 0 0;
-      height: 40px;
-      line-height: 40px;
+      border-radius: 0.07rem .1rem 0 0;
+      height: 0.4rem;
+      line-height: 0.4rem;
     }
   }

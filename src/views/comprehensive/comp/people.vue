@@ -77,21 +77,21 @@ export default {
   .box-wrapper {
       display: flex;
       justify-content: space-between;
-      margin: 15px 20px;
+      margin: .1rem .2rem .1rem;
       .inner {
         display: flex;
         align-items: center;
         flex-direction: column;
         p {
-          font-size: 32px;
+          font-size: .28rem;
           color: $yellow;
           margin: 0;
           font-family: Arial, Helvetica, sans-serif;
         }
         span {
           color: $white;
-          font-size: 12px;
-          margin-top: 4px;
+          font-size: .12rem;
+          margin-top: .04rem;
           display: block;
         }
       }

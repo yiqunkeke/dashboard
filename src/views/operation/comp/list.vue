@@ -87,6 +87,10 @@ export default {
       td, th.is-leaf {
         border-bottom: none;
       }
+      td, th {
+        padding: 0;
+        font-size: .12rem;
+      }
     }
     .el-table::before {
         height: 0;

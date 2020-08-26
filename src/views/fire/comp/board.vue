@@ -64,34 +64,35 @@ export default {
   background: url('../../../assets/images/map.jpg') no-repeat;
   background-size: cover;
   // min-height: 419px;
-  min-height: 382px;
-  border-radius: 10px;
+  // min-height: 382px;
+  height: 100%;
+  border-radius: .1rem;
   position: relative;
   .line {
     display: flex;
-    padding-left: 33px;
-    padding-top: 30px;
+    padding-left: .33rem;
+    padding-top: .3rem;
     justify-content: space-between;
-    padding-right: 33px;
+    padding-right: .33rem;
     .block {
       background: url('../../../assets/images/boardItemBg.png') no-repeat;
       background-size: contain;
-      width: 124px;
-      height: 46px;
+      width: 1.24rem;
+      height: .46rem;
       display: flex;
       align-items: center;
       justify-content: flex-start;
       // margin-right: 36px;
       span {
         color: $white;
-        font-size: 12px;
-        width: 55px;
+        font-size: .12rem;
+        width: .55rem;
         text-align: center;
         display: block;
       }
       em {
         color: #00fcf9;
-        font-size: 20px;
+        font-size: .20rem;
       }
     }
   }

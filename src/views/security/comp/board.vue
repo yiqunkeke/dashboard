@@ -56,9 +56,10 @@ export default {
 .box-wrapper {
   background: url('../../../assets/images/map.jpg') no-repeat;
   background-size: cover;
+  height: 100%;
   // min-height: 419px;
-  min-height: 382px;
-  border-radius: 10px;
+  // min-height: 382px;
+  border-radius: .1rem;
   position: relative;
   .month {
     position: absolute;
@@ -66,32 +67,33 @@ export default {
     right: 6%;
     background: rgba($color: #001d7a, $alpha: 0.6);
     border-radius: 10px;
-    padding: 17px;
+    padding: .17rem;
     color: $white;
     h2 {
-      font-size: 16px;
-      margin-bottom: 25px;
+      font-size: .16rem;
+      margin-bottom: .25rem;
     }
     .line {
       display: flex;
-      width: 290px;
+      width: 2.9rem;
       flex-wrap: wrap;
       .inner {
-        margin-right: 40px;
-        margin-bottom: 30px;
+        margin-right: .4rem;
+        margin-bottom: .3rem;
         span {
-          font-size: 14px;
+          font-size: .14rem;
           color: #a8b1c9;
-          margin-bottom: 13px;
+          margin-bottom: .13rem;
           display: block;
         }
         p {
           color: $white;
+          font-size: .14rem;
           em {
             color: $orange;
-            font-size: 24px;
+            font-size: .24rem;
             font-weight: bold;
-            margin-right: 6px;
+            margin-right: .06rem;
           }
         }
       }

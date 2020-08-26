@@ -7,6 +7,7 @@ import echarts from 'echarts'
 import './assets/styles/global.css' // 全局
 import './assets/styles/iconfont.css' // 字体图标
 import './router/permission'
+import './assets/js/global'
 
 // https://vuescrolljs.yvescoding.org/zh/
 import vuescroll from 'vuescroll'

@@ -64,23 +64,23 @@ export default {
 
 <style lang="scss">
 .el-submenu__title {
-  padding-left: 16px !important;
-  font-size: 13px !important;
+  padding-left: .16rem !important;
+  font-size: .13rem !important;
   // height: 50px !important;
   // line-height: 50px !important;
   display: flex;
   align-items: center;
 }
 .iconfont {
-    margin-right: 8px;
+    margin-right: .08rem;
 }
 .el-submenu__title:hover, .el-menu-item:hover {
   color: #fff !important;
 }
 .el-menu-item {
-  height: 106px !important;
-  line-height: 106px !important;
-  font-size: 30px !important;
+  height: 1.06rem !important;
+  line-height: 1rem !important;
+  font-size: .3rem !important;
   font-weight: bold;
   display: flex;
   justify-content: center;

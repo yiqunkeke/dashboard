@@ -8,11 +8,8 @@
       <h1>
         营地营收
       </h1>
-      <!-- <div>
-        {{income}}
-      </div> -->
       <div class="chart">
-        <div ref="chart" :style="{width: '100%', height: '282px'}"></div>
+        <div ref="chart" :style="{width: '100%', height: '100%'}"></div>
       </div>
   </div>
 </template>
@@ -111,4 +108,7 @@ export default {
 
 <style lang="scss" scoped>
 @import '~@/assets/styles/box.scss';
+.chart {
+    height: 100%;
+  }
 </style>

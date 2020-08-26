@@ -1,6 +1,5 @@
 <template>
-  <div>
-    <el-row :gutter="20">
+  <el-row :gutter="20">
       <el-col :span="6">
         <!-- 实时报警 -->
         <realAlarm :realAlarm="realAlarm"/>
@@ -24,7 +23,6 @@
         <areaFireComp :areaFire="areaFire"/>
       </el-col>
     </el-row>
-  </div>
 </template>
 
 <script>
@@ -116,6 +114,14 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+.el-row {
+  display: flex;
+  width: 100%;
+  .el-col{
+    display: flex;
+    flex-direction: column;
+  }
+}
 </style>
+

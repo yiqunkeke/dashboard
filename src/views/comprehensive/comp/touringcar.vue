@@ -9,7 +9,7 @@
         拖挂房车客房统计
       </h1>
       <div class="box-wrapper">
-        <div ref="chart" :style="{width: '50%', height: '112px'}"></div>
+        <div ref="chart" :style="{width: '50%', height: '80%'}"></div>
         <div class="text">
           <div class="inner">
             <span>总房车数：</span>
@@ -132,6 +132,7 @@ export default {
       display: flex;
       justify-content: flex-start;
       align-items: center;
+      height: 100%;
       .text {
         color: $white;
         display: flex;
@@ -140,14 +141,14 @@ export default {
           display: flex;
           align-items: center;
           p {
-            font-size: 20px;
+            font-size: .20rem;
             margin: 0;
             font-family: Arial, Helvetica, sans-serif;
           }
           span {
-            font-size: 12px;
-            margin-bottom: 8px;
-            margin-top: 8px;
+            font-size: .12rem;
+            margin-bottom: .08rem;
+            margin-top: .08rem;
             display: block;
           }
         }

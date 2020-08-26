@@ -9,7 +9,9 @@
         摄像头在线情况
       </h1>
       <!-- {{cameraOnline}} -->
-      <div ref="chart" :style="{width: '100%', height: '200px'}"></div>
+      <div class="chart">
+        <div ref="chart" :style="{width: '100%', height: '100%'}"></div>
+      </div>
   </div>
 </template>
 
@@ -164,4 +166,7 @@ export default {
 
 <style lang="scss" scoped>
 @import '~@/assets/styles/box.scss';
+.chart {
+  height: 100%;
+}
 </style>

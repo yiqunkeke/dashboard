@@ -34,7 +34,12 @@ export default {
 
   background: #01011b;
   // background-image: radial-gradient(circle, #014ba0, #01011b);
-  padding-bottom: 110px;
+  padding-bottom: 1.1rem;
   overflow: none;
+  ::v-deep .__view {
+    display: flex;
+    height: 100%;
+    overflow: hidden;
+  }
 }
 </style>

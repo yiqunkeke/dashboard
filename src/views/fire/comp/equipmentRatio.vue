@@ -9,7 +9,9 @@
         消防设备占比
       </h1>
       <!-- {{ratio}} -->
-      <div ref="chart" :style="{width: '100%', height: '220px'}"></div>
+      <div class="box-wrapper">
+        <div ref="chart" :style="{width: '100%', height: '100%'}"></div>
+      </div>
   </div>
 </template>
 
@@ -122,4 +124,7 @@ export default {
 
 <style lang="scss" scoped>
   @import '~@/assets/styles/box.scss';
+  .box-wrapper {
+    height: 100%;
+  }
 </style>

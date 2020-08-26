@@ -12,7 +12,7 @@
         {{income}}
       </div> -->
       <div class="chart">
-        <div ref="chart2" :style="{width: '100%', height: '200px'}"></div>
+        <div ref="chart2" :style="{width: '100%', height: '100%'}"></div>
       </div>
   </div>
 </template>
@@ -172,6 +172,6 @@ export default {
 <style lang="scss" scoped>
 @import '~@/assets/styles/box.scss';
 .chart {
-    padding-top: 10px;
+    height: 100%;
 }
 </style>

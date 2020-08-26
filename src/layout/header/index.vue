@@ -2,7 +2,9 @@
   <el-header>
     <el-row>
       <el-col :span="8" class="header-logo">
-        <img src="../../assets/logo.png">
+        <div class="logo-wrapper">
+          <img src="../../assets/logo.png">
+        </div>
       </el-col>
       <el-col :span="8" class="slogan">
         智慧营地大数据看板
@@ -10,7 +12,8 @@
       <el-col :span="8" class="header-right">
         <el-dropdown @command="handleCommand">
         <span class="el-dropdown-link">
-          {{username}}-{{systemName}}<i class="el-icon-arrow-down el-icon--right"></i>
+          {{username}}<br/>
+          {{systemName}}<i class="el-icon-arrow-down el-icon--right"></i>
         </span>
         <el-dropdown-menu slot="dropdown" class="list">
           <el-dropdown-item command="updatePwd">
@@ -126,7 +129,7 @@ export default {
 
 <style lang="scss" scoped>
 .list .el-dropdown-menu__item {
-  font-size: 12px;
+  font-size: 0.12rem;
 }
 .el-header {
   z-index: 999;
@@ -139,20 +142,25 @@ export default {
   .header-logo {
     background-image: linear-gradient(to right, #05112f, #06266a);
     border-bottom: 2px solid #224cb3;
-    height: 68px;
-    line-height: 68px;
-    img {
-      width: 187px;
-      height: 50px;
-      margin-top: 9px;
-      margin-left: 50px;
+    height: .68rem;
+    line-height: .68rem;
+    .logo-wrapper {
+      width: 1.87rem;
+      img {
+        width: 100%;
+        height: auto;
+        max-height: .68rem;
+        display: block;
+        margin-top: .09rem;
+        margin-left: .2rem;
+      }
     }
   }
   .slogan {
       background: url('../../assets/images/sloganBg.png') no-repeat;
       background-size: 100% 100%;
       color: #00fcff;
-      font-size: 40px;
+      font-size: 0.38rem;
       font-weight: bold;
       height: $headerHeight;
       line-height: $headerHeight;
@@ -164,16 +172,16 @@ export default {
     align-items: center;
     background-image: linear-gradient(to right, #072362, #05112f);
     border-bottom: 2px solid #224cb3;
-    height: 68px;
-    line-height: 68px;
+    height: .68rem;
+    // line-height: 68px;
     padding-right: 20px;
     .el-dropdown-link {
       cursor: pointer;
       color: #fff;
-      font-size: 12px;
+      font-size: 0.14rem;
     }
     .el-icon-arrow-down {
-      font-size: 12px;
+      font-size: 0.14rem;
     }
   }
 }

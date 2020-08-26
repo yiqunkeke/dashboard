@@ -9,7 +9,9 @@
         行为统计
       </h1>
       <!-- {{behavior}} -->
-      <div ref="chart" :style="{width: '100%', height: '200px'}"></div>
+      <div class="chart">
+        <div ref="chart" :style="{width: '100%', height: '100%'}"></div>
+      </div>
   </div>
 </template>
 
@@ -67,7 +69,7 @@ export default {
           legend: {
             orient: 'vertical',
             right: 10,
-            top: 70,
+            top: 10,
             data: this.xDataCircle,
             textStyle: {
               color: '#ffffff'
@@ -154,4 +156,7 @@ export default {
 
 <style lang="scss" scoped>
 @import '~@/assets/styles/box.scss';
+.chart {
+  height: 100%;
+}
 </style>

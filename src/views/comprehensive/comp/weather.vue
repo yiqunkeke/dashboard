@@ -7,10 +7,10 @@
   <div class="box">
       <div class="box-wrapper">
         <p>
-        温度：<em>{{wea.temperature}}</em>℃
+          <span>温度：</span><em>{{wea.temperature}}</em><span>℃</span>
         </p>
         <p>
-        湿度：<em>{{wea.humidity}}</em>%
+        <span>湿度：</span><em>{{wea.humidity}}</em><span>%</span>
         </p>
       </div>
   </div>
@@ -43,14 +43,16 @@ export default {
 @import '~@/assets/styles/box.scss';
   .box-wrapper {
       display: flex;
-      justify-content: flex-start;
-      padding: 40px;
+      justify-content: space-between;
+      padding: .1rem .3rem;
       p {
-        font-size: 12px;
+        font-size:0.12rem;
         color: $white;
         margin-right: 25px;
+        display: flex;
+        align-items: center;
         em {
-          font-size: 60px;
+          font-size: .3rem;
           color: $white;
           font-family: Arial, Helvetica, sans-serif;
           font-style: normal;

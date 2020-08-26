@@ -8,7 +8,7 @@
         <span>总人流量: {{peo.allPeople}} </span>
         <em>日访问量: {{peo.todayPeople}}</em>
       </div>
-      <div ref="chart" :style="{width: '100%', height: '180px'}"></div>
+      <div ref="chart" :style="{width: '100%', height: '100%'}"></div>
   </div>
 </template>
 
@@ -113,13 +113,13 @@ export default {
                 }
               }
             },
-            markPoint: {
-              symbol: 'pin',
-              data: [
-                { type: 'max', name: '最大值' },
-                { type: 'min', name: '最小值' }
-              ]
-            }
+            // markPoint: {
+            //   symbol: 'pin',
+            //   data: [
+            //     { type: 'max', name: '最大值' },
+            //     { type: 'min', name: '最小值' }
+            //   ]
+            // }
           }]
         }
         myChart.setOption(option)
@@ -141,8 +141,8 @@ export default {
 @import '~@/assets/styles/box.scss';
 .total {
     display: flex;
-    font-size: 14px;
-    padding: 14px 34px 0;
+    font-size: .14rem;
+    padding: .14rem .34rem 0;
     justify-content: space-between;
     span {
         color: $white;

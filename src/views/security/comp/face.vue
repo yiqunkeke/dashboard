@@ -6,8 +6,8 @@
       <!-- {{face}}
       {{license}} -->
       <div class="box-wrapper">
-        <div ref="chart" :style="{width: '50%', height: '160px'}"></div>
-        <div ref="chart2" :style="{width: '50%', height: '160px'}"></div>
+        <div ref="chart" :style="{width: '50%', height: '100%'}"></div>
+        <div ref="chart2" :style="{width: '50%', height: '100%'}"></div>
       </div>
   </div>
 </template>
@@ -81,8 +81,8 @@ export default {
           },
           legend: {
             orient: 'vertical',
-            right: 60,
-            top: 60,
+            right: 10,
+            top: 10,
             data: this.xData,
             textStyle: {
               color: '#ffffff'
@@ -138,8 +138,8 @@ export default {
           color: ['#f28413', '#0282ff'],
           legend: {
             orient: 'vertical',
-            right: 60,
-            top: 60,
+            right: 10,
+            top: 10,
             data: this.xData,
             textStyle: {
               color: '#ffffff'
@@ -189,5 +189,6 @@ export default {
 @import '~@/assets/styles/box.scss';
 .box-wrapper {
     display: flex;
+    height: 100%;
 }
 </style>

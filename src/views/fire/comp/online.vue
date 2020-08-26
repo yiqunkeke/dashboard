@@ -10,7 +10,7 @@
       </h1>
       <!-- {{onlineStatus}} -->
       <div class="box-wrapper">
-        <div ref="chart2" :style="{width: '100%', height: '200px'}"></div>
+        <div ref="chart2" :style="{width: '100%', height: '100%'}"></div>
       </div>
   </div>
 </template>
@@ -69,7 +69,7 @@ export default {
           legend: {
             orient: 'vertical',
             right: 10,
-            top: 30,
+            top: 10,
             data: this.xDataCircle,
             textStyle: {
               color: '#ffffff'
@@ -167,7 +167,6 @@ export default {
 <style lang="scss" scoped>
   @import '~@/assets/styles/box.scss';
   .box-wrapper {
-    padding-top: 2px;
-    padding-bottom: 3px;
+    height: 100%;
   }
 </style>

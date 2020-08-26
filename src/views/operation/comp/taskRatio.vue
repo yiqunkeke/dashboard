@@ -5,7 +5,7 @@
       </h1>
       <div class="box-wrapper">
           <!-- {{taskData}} -->
-          <div ref="chart" :style="{width: '100%', height: '243px'}"></div>
+          <div ref="chart" :style="{width: '100%', height: '100%'}"></div>
       </div>
   </div>
 </template>
@@ -140,6 +140,6 @@ export default {
 <style lang="scss" scoped>
 @import '~@/assets/styles/box.scss';
 .box-wrapper {
-  // padding-top: 20px;
+  height: 100%;
 }
 </style>

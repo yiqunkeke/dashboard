@@ -91,11 +91,11 @@ export default {
       display: flex;
       flex: 1;
       width: 100%;
-      height: 106px;
+      // height: 1.06rem;
       border-right: none;
       justify-content: space-between;
       ::v-deep>div {
-        width: 25%;
+        width: 18%;
       }
     }
     ::v-deep .el-menu.el-menu--horizontal {
@@ -107,10 +107,12 @@ export default {
         background-color: transparent !important;
         border-bottom-color: transparent !important;
         background: url('../../assets/images/default.png') no-repeat center;
+        background-size: contain;
       }
       .el-menu-item.is-active {
         background: url('../../assets/images/active.png') no-repeat center;
         // background-size: 100% 100%;
+        background-size: contain;
       }
       .el-submenu__title:hover, .el-menu-item:hover {
         color: #fed53c !important;
@@ -118,11 +120,15 @@ export default {
     }
     .left {
       background: #01011b;
+      display: flex;
+      align-items: flex-start;
       // height: 106px;
       // background-image: linear-gradient(to right, #07072e, #01011b);
     }
     .right {
       background: #01011b;
+      display: flex;
+      align-items: flex-start;
       // height: 106px;
       // background-image: linear-gradient(to left, #07072e, #01011b);
     }

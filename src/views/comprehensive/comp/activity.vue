@@ -5,7 +5,7 @@
       </h1>
       <div class="box-wrapper">
         <!-- {{activity}} -->
-        <div ref="chart" :style="{width: '100%', height: '188px'}"></div>
+        <div ref="chart" :style="{width: '100%', height: '100%'}"></div>
       </div>
   </div>
 </template>
@@ -128,8 +128,9 @@ export default {
   .box-wrapper {
       display: flex;
       justify-content: space-between;
-      padding-left: 10px;
-      padding-right: 10px;
-      padding-bottom: 10px;
+      // padding-left: .1rem;
+      // padding-right: .1rem;
+      // padding-bottom: .1rem;
+      height: 100%;
     }
 </style>
