@@ -1,7 +1,18 @@
 <template>
-  <div>
-    <el-row :gutter="20">
+  <el-row :gutter="20">
       <el-col :span="6">
+        <!-- <div class="boxs">
+          1
+        </div>
+        <div class="boxs">
+          2
+        </div>
+        <div class="boxs">
+          3
+        </div>
+        <div class="boxs">
+          4
+        </div> -->
         <!-- 天气 -->
         <weatherComp :weather="weather"/>
         <!-- 电/水力监控 -->
@@ -26,7 +37,6 @@
         <incomeMonthComp :income="income"/>
       </el-col>
     </el-row>
-  </div>
 </template>
 
 <script>
@@ -124,6 +134,13 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+// .row {
+//   display: flex;
+//   width: 100%;
+//   .col {
+//     display: flex;
+//     flex-direction: column;
+//   }
+// }
 </style>
