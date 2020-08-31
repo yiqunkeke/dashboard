@@ -69,7 +69,7 @@ export default {
           legend: {
             orient: 'vertical',
             right: 10,
-            top: 50,
+            top: 10,
             data: this.xDataCircle,
             textStyle: {
               color: '#ffffff'

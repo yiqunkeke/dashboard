@@ -16,6 +16,9 @@
           {{systemName}}<i class="el-icon-arrow-down el-icon--right"></i>
         </span>
         <el-dropdown-menu slot="dropdown" class="list">
+          <el-dropdown-item command="touringcar">
+            <i class="iconfont icon-che"></i>房车
+          </el-dropdown-item>
           <el-dropdown-item command="updatePwd">
             <i class="iconfont icon-mima"></i>修改密码
           </el-dropdown-item>
@@ -95,6 +98,9 @@ export default {
       if (command === 'updatePwd') {
         this.dialogVisible = true
       }
+      if(command === 'touringcar') {
+        this.$router.push('/car')
+      }
     },
     handleCancel () {
       this.dialogVisible = false
@@ -130,6 +136,10 @@ export default {
 <style lang="scss" scoped>
 .list .el-dropdown-menu__item {
   font-size: 0.12rem;
+  display: flex;
+  i {
+    font-size: .18rem;
+  }
 }
 .el-header {
   z-index: 999;

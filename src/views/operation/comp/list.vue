@@ -88,7 +88,8 @@ export default {
         border-bottom: none;
       }
       td, th {
-        padding: 0;
+        padding-top: .05rem;
+        padding-bottom: .05rem;
         font-size: .12rem;
       }
     }

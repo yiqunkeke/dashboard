@@ -5,6 +5,7 @@ import comprehensiveRouter from './modules/comprehensive'
 import fireRouter from './modules/fire'
 import securityRouter from './modules/security'
 import operationRouter from './modules/operation'
+import touringCarRouter from './modules/touringcar'
 
 Vue.use(VueRouter)
 
@@ -39,7 +40,8 @@ export const asyncRouter = [
   comprehensiveRouter,
   fireRouter,
   securityRouter,
-  operationRouter
+  operationRouter,
+  touringCarRouter
 ]
 
 // https://github.com/vuejs/vue-router/issues/1234#issuecomment-357941465
