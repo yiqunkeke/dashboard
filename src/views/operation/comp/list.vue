@@ -79,7 +79,7 @@ export default {
       thead {
         color: $white;
         background-image:linear-gradient(to right, #283999, #0a296c);
-        border-radius: 10px 10px 0 0;
+        border-radius: .1rem .1rem 0 0;
       }
       th, tr {
         background-color: transparent;

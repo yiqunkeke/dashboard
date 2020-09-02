@@ -108,58 +108,58 @@ export default {
   align-items: center;
   justify-content: center;
   .login-pannel {
-    width: 300px;
-    padding:20px;
+    width: 4rem;
+    padding:.2rem;
     background: rgba(255,255,255,.1);
-    border-radius: 30px;
+    border-radius: .3rem;
     .login-title {
       display: flex;
       align-items: center;
       justify-content: center;
       i {
-        font-size: 45px;
+        font-size: .45rem;
         color: $light;
-        text-shadow: 3px 3px 5px #143c5b;
+        text-shadow: .03rem .03rem .05rem #143c5b;
       }
       h1 {
         color: $light;
-        font-size: 20px;
+        font-size: .2rem;
         font-weight: normal;
         text-align: justify;
-        text-shadow: 3px 3px 5px #0e2a40;
+        text-shadow: .03rem .03rem .05rem #0e2a40;
         em {
-          font-size: 12px;
+          font-size: .12rem;
           font-style: normal;
           display: block;
-          letter-spacing: 3px;
+          letter-spacing: .03rem;
         }
       }
     }
     .login-form {
       width: 95%;
-      margin-top: 30px;
+      margin-top: .3rem;
       margin-left: auto;
       margin-right: auto;
       .el-select {
         width: 100%;
       }
       ::v-deep .el-input__prefix {
-        left: 25px;
+        left: .25rem;
         color: #fff;
       }
       ::v-deep .el-input__inner {
-        padding-left: 60px;
+        padding-left: .6rem;
         background: rgba(255,255,255,.1);
-        border-radius: 25px;
+        border-radius: .25rem;
         color: #fff;
-        font-size: 13px;
+        font-size: .13rem;
         border: none;
       }
       .el-button {
         width: 100%;
-        margin-top: 10px;
+        margin-top: .1rem;
         background: transparent;
-        border: 1px solid $light;
+        border: .01rem solid $light;
         color: #fff;
       }
     }

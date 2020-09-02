@@ -102,7 +102,7 @@ export default {
       border: none;
       background-image: linear-gradient(to right, #01011b, #021b60, #01011b);
       background-color: transparent !important;
-      border-top: 2px solid #00379e;
+      border-top: .02rem solid #00379e;
       .el-menu-item {
         background-color: transparent !important;
         border-bottom-color: transparent !important;
@@ -122,14 +122,12 @@ export default {
       background: #01011b;
       display: flex;
       align-items: flex-start;
-      // height: 106px;
       // background-image: linear-gradient(to right, #07072e, #01011b);
     }
     .right {
       background: #01011b;
       display: flex;
       align-items: flex-start;
-      // height: 106px;
       // background-image: linear-gradient(to left, #07072e, #01011b);
     }
   }

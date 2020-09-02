@@ -47,22 +47,22 @@ export default {
 
 <style lang="scss" scoped>
 ::v-deep .el-dialog {
-    border-radius: 5px;
+    border-radius: .05rem;
     .el-dialog__header {
-    padding: 10px 15px;
+    padding: .1rem .15rem;
     background: #f5f5f5;
-    box-shadow: 0 1px 1px rgba(0,0,0,.16);
-    border-radius: 5px 5px 0 0;
+    box-shadow: 0 .01rem .01rem rgba(0,0,0,.16);
+    border-radius: .05rem .05rem 0 0;
     .el-dialog__title {
-        font-size: 16px;
+        font-size: .16rem;
         color: #333;
     }
     .el-dialog__headerbtn {
-        top: 15px;
-        right: 15px;
+        top: .15rem;
+        right: .15rem;
     }
     .el-dialog__body {
-        padding: 15px;
+        padding: .15rem;
     }
 }
 }

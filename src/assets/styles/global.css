@@ -2,7 +2,7 @@ body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legen
 
 html{color:#000;}
 
-body,button,input,select,textarea{font-size:0.75em/1.5; font-family:arial,'Hiragino Sans GB','Microsoft Yahei','微软雅黑','宋体',\5b8b\4f53,Tahoma,Arial,Helvetica,STHeiti}
+body,button,input,select,textarea{font-size:0.12rem; font-family:arial,'Hiragino Sans GB','Microsoft Yahei','微软雅黑','宋体',\5b8b\4f53,Tahoma,Arial,Helvetica,STHeiti}
 
 h1,h2,h3,h4,h5,h6{font-size:100%}
 

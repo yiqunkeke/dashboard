@@ -33,7 +33,7 @@
       :dialogVisible="dialogVisible"
       @cancel="handleCancel"
       @confirm="handleConfirm">
-        <el-form :model="form" :rules="rules" label-width="100px" ref="form">
+        <el-form :model="form" :rules="rules" label-width="1.2rem" ref="form">
           <el-form-item prop="oldPwd" label="原密码">
             <el-input v-model="form.oldPwd" placeholder="请输入原密码" type="password" size="small">
             </el-input>
@@ -141,6 +141,9 @@ export default {
     font-size: .18rem;
   }
 }
+// .el-dialog {
+//   font-size: .12rem !important;
+// }
 .el-header {
   z-index: 999;
   width: 100%;
@@ -151,7 +154,7 @@ export default {
   // background-image: radial-gradient(circle, #05112f 10%, #06266a 10%);
   .header-logo {
     background-image: linear-gradient(to right, #05112f, #06266a);
-    border-bottom: 2px solid #224cb3;
+    border-bottom: .02rem solid #224cb3;
     height: .68rem;
     line-height: .68rem;
     .logo-wrapper {
@@ -181,10 +184,9 @@ export default {
     justify-content: flex-end;
     align-items: center;
     background-image: linear-gradient(to right, #072362, #05112f);
-    border-bottom: 2px solid #224cb3;
+    border-bottom: .02rem solid #224cb3;
     height: .68rem;
-    // line-height: 68px;
-    padding-right: 20px;
+    padding-right: .2rem;
     .el-dropdown-link {
       cursor: pointer;
       color: #fff;

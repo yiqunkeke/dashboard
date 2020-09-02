@@ -57,8 +57,6 @@ export default {
   background: url('../../../assets/images/map.jpg') no-repeat;
   background-size: cover;
   height: 100%;
-  // min-height: 419px;
-  // min-height: 382px;
   border-radius: .1rem;
   position: relative;
   .month {
@@ -66,7 +64,7 @@ export default {
     top: 10%;
     right: 6%;
     background: rgba($color: #001d7a, $alpha: 0.6);
-    border-radius: 10px;
+    border-radius: .1rem;
     padding: .17rem;
     color: $white;
     h2 {

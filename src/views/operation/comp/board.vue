@@ -43,10 +43,8 @@ export default {
 .box-wrapper {
   background: url('../../../assets/images/map.jpg') no-repeat;
   background-size: cover;
-  // min-height: 419px;
-  // min-height: 382px;
   height: 100%;
-  border-radius: 10px;
+  border-radius: .1rem;
   position: relative;
   .month {
     position: absolute;
@@ -65,8 +63,7 @@ export default {
       width: 2.90rem;
       flex-wrap: wrap;
       .inner {
-        margin-right: 40px;
-        // margin-bottom: 30px;
+        margin-right: .4rem;
         span {
           font-size: .14rem;
           color: #a8b1c9;

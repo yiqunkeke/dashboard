@@ -66,8 +66,6 @@ export default {
 .el-submenu__title {
   padding-left: .16rem !important;
   font-size: .13rem !important;
-  // height: 50px !important;
-  // line-height: 50px !important;
   display: flex;
   align-items: center;
 }

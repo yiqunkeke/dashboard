@@ -63,8 +63,6 @@ export default {
 .box-wrapper {
   background: url('../../../assets/images/map.jpg') no-repeat;
   background-size: cover;
-  // min-height: 419px;
-  // min-height: 382px;
   height: 100%;
   border-radius: .1rem;
   position: relative;
@@ -82,7 +80,6 @@ export default {
       display: flex;
       align-items: center;
       justify-content: flex-start;
-      // margin-right: 36px;
       span {
         color: $white;
         font-size: .12rem;

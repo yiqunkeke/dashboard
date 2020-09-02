@@ -32,11 +32,11 @@ export default {
   display: flex;
   padding: .2rem .2rem 0;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: space-between;
   .video {
     margin-right: .15rem;
     margin-bottom: .15rem;
-    width: .5rem;
+    width: .9rem;
     height: .5rem;
   }
 }

@@ -55,8 +55,6 @@ export default {
   background: url('../../../assets/images/map.jpg') no-repeat;
   background-size: cover;
   height: 100%;
-  // min-height: 419px;
-  // min-height: 382px;
   border-radius: .1rem;
   position: relative;
   .month {

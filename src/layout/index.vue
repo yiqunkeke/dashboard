@@ -30,7 +30,6 @@ export default {
   left: 0;
   right:0;
   bottom: 0;
-  // bottom: 110px;
 
   background: #01011b;
   // background-image: radial-gradient(circle, #014ba0, #01011b);

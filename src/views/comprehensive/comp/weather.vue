@@ -48,7 +48,7 @@ export default {
       p {
         font-size:0.12rem;
         color: $white;
-        margin-right: 25px;
+        margin-right: .25rem;
         display: flex;
         align-items: center;
         em {
