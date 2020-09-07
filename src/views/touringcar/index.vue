@@ -15,9 +15,9 @@
           <h1>
             房车设备使用情况
           </h1>
-          <el-table :data="tableData" stripe>
+          <el-table :data="equipments" stripe>
                 <el-table-column
-                    prop="room"
+                    prop="roomName"
                     label="房间"
                     width="120">
                 </el-table-column>
@@ -27,22 +27,26 @@
                     width="120">
                 </el-table-column>
                 <el-table-column
-                    prop="resource"
                     label="来源"
                     width="280">
+                    <template slot-scope="scope">
+                      客户端：{{scope.row.sourceOperation}}，
+                      房车网关：{{scope.row.sourceGateway}}，
+                      实体按键：{{scope.row.sourceUseKey}}
+                    </template>
                 </el-table-column>
                 <el-table-column
-                    prop="dayTotalTime"
+                    prop="useTotalTime"
                     label="当日使用总时长"
                     width="120">
                 </el-table-column>
                 <el-table-column
-                    prop="dayAvarageTime"
+                    prop="avgTime"
                     label="当日每次平均时长"
                     width="120">
                 </el-table-column>
                 <el-table-column
-                    prop="dayCounts"
+                    prop="useTotalFrequency"
                     label="当日使用次数">
                 </el-table-column>
           </el-table>
@@ -53,34 +57,38 @@
           <h1>
             房车模式使用情况
           </h1>
-          <el-table :data="tableData2" stripe>
+          <el-table :data="modes" stripe>
                 <el-table-column
-                    prop="room"
+                    prop="roomName"
                     label="房间"
                     width="120">
                 </el-table-column>
                 <el-table-column
-                    prop="modeName"
+                    prop="modelName"
                     label="模式"
                     width="120">
                 </el-table-column>
                 <el-table-column
-                    prop="resource"
                     label="来源"
                     width="280">
+                    <template slot-scope="scope">
+                      客户端：{{scope.row.sourceOperation}}，
+                      房车网关：{{scope.row.sourceGateway}}，
+                      实体按键：{{scope.row.sourceUseKey}}
+                    </template>
                 </el-table-column>
                 <el-table-column
-                    prop="dayTotalTime"
+                    prop="useTotalTime"
                     label="使用时长"
                     width="120">
                 </el-table-column>
                 <el-table-column
-                    prop="dayAvarageTime"
+                    prop="avgTime"
                     label="当日每次平均时长"
                     width="120">
                 </el-table-column>
                 <el-table-column
-                    prop="dayCounts"
+                    prop="useTotalFrequency"
                     label="当日使用次数">
                 </el-table-column>
           </el-table>
@@ -91,132 +99,56 @@
 </template>
 
 <script>
-import { operationList } from '@/api/operation'
+import { tcarEquipment, tcarMode } from '@/api/touringcar'
 export default {
 	data() {
 		return {
       options: [{
-          value: '选项1',
-          label: '荣成拖挂房车A'
-        }, {
-          value: '选项2',
-          label: '荣成拖挂房车B'
-        }, {
-          value: '选项3',
-          label: '荣成自行房车A'
+          value: 'C0847DB6F000',
+          label: '帝盛房车A'
         }],
-        value: '选项1',
-        tableData: [
-          {
-            room:'儿童房',
-            equipmentName: '顶灯',
-            resource: '小程序：0，实体按键1，房车网关：2',
-            dayTotalTime: '10:00:00',
-            dayAvarageTime: '8:00:00',
-            dayCounts: '20'
-          },
-          {
-            room:'客厅',
-            equipmentName: '筒灯',
-            resource: '小程序：8，实体按键15，房车网关：2',
-            dayTotalTime: '8:00:00',
-            dayAvarageTime: '8:00:00',
-            dayCounts: '25'
-          },
-          {
-            room:'主卧',
-            equipmentName: '灯带',
-            resource: '小程序：3，实体按键6，房车网关：0',
-            dayTotalTime: '3:00:00',
-            dayAvarageTime: '8:00:00',
-            dayCounts: '9'
-          },
-          {
-            room:'主卧',
-            equipmentName: '气氛灯',
-            resource: '小程序：3，实体按键6，房车网关：0',
-            dayTotalTime: '3:00:00',
-            dayAvarageTime: '8:00:00',
-            dayCounts: '9'
-          },
-          {
-            room:'卫生间',
-            equipmentName: '顶灯',
-            resource: '小程序：3，实体按键6，房车网关：0',
-            dayTotalTime: '3:00:00',
-            dayAvarageTime: '8:00:00',
-            dayCounts: '9'
-          },
-          {
-            room:'客厅',
-            equipmentName: '顶灯',
-            resource: '小程序：3，实体按键6，房车网关：0',
-            dayTotalTime: '3:00:00',
-            dayAvarageTime: '8:00:00',
-            dayCounts: '9'
-          }
-        ],
-        tableData2: [
-          {
-            room:'儿童房',
-            modeName: '温馨',
-            resource: '小程序：0，实体按键1，房车网关：2',
-            dayTotalTime: '10:00:00',
-            dayAvarageTime: '8:00:00',
-            dayCounts: '20'
-          },
-          {
-            room:'客厅',
-            modeName: '起夜',
-            resource: '小程序：8，实体按键15，房车网关：2',
-            dayTotalTime: '8:00:00',
-            dayAvarageTime: '8:00:00',
-            dayCounts: '10'
-          },
-          {
-            room:'主卧',
-            modeName: '观影',
-            resource: '小程序：3，实体按键6，房车网关：0',
-            dayTotalTime: '3:00:00',
-            dayAvarageTime: '8:00:00',
-            dayCounts: '8'
-          },
-          {
-            room:'客厅',
-            modeName: '明亮',
-            resource: '小程序：3，实体按键6，房车网关：0',
-            dayTotalTime: '3:00:00',
-            dayAvarageTime: '8:00:00',
-            dayCounts: '10'
-          },
-          {
-            room:'客厅',
-            modeName: '晨起',
-            resource: '小程序：3，实体按键6，房车网关：0',
-            dayTotalTime: '3:00:00',
-            dayAvarageTime: '8:00:00',
-            dayCounts: '3'
-          },
-        ],
-        list: []
+        value: 'C0847DB6F000',
+        equipments: [],
+        modes: []
 		}
   },
   watch: {
-    list(val) {
-      // console.log('watch', val)
-      console.log(val)
+    equipments(val) {
+      console.log('equipments',val)
+      this.equipments = val
+    },
+    modes(val) {
+      console.log('modes',val)
+      this.modes = val
     }
   },
   mounted() {
-    this.getData()
+    this.getEquipment()
+    this.getMode()
   },
  	methods: {
-     //根据房车-房间获取设备、模式
-     getData() {
+     //根据房车-房间获取设备
+     async getEquipment() {
+       this.equipments = await tcarEquipment({
+            carNum: 'C0847DB6F000'
+          })
        setInterval(async () => { 
-          this.list = await operationList()
-          // console.log('list', this.list)
-        }, 10000)
+          this.equipments = await tcarEquipment({
+            carNum: 'C0847DB6F000'
+          })
+        }, 2000)
+     },
+    //  获取模式
+     async getMode() {
+       this.modes = await tcarMode({
+            carNum: 'C0847DB6F000'
+       })
+       setInterval(async () => { 
+          this.modes = await tcarMode({
+            carNum: 'C0847DB6F000'
+          })
+          console.log('modes', this.modes)
+        }, 2000)
      }
 	  }
 }
