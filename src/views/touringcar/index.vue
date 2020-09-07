@@ -43,7 +43,7 @@
                 <el-table-column
                     prop="avgTime"
                     label="当日每次平均时长"
-                    width="120">
+                    width="140">
                 </el-table-column>
                 <el-table-column
                     prop="useTotalFrequency"
@@ -85,7 +85,7 @@
                 <el-table-column
                     prop="avgTime"
                     label="当日每次平均时长"
-                    width="120">
+                    width="140">
                 </el-table-column>
                 <el-table-column
                     prop="useTotalFrequency"
