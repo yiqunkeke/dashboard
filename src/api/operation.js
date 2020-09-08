@@ -9,6 +9,14 @@ export function workOrderStatistic () {
   })
 }
 
+// 今日工单各维度统计-服务类
+export function serviceOrderStatistic () {
+  return request({
+    url: `${baseApi.COMPREHENSIVE_URL}/mochaitom/private/serviceworkorderstatistics`,
+    method: 'post'
+  })
+}
+
 // 报修设备占比
 export function equipRatio () {
   return request({

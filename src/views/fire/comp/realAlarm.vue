@@ -10,9 +10,10 @@
       </h1>
       <ul class="list">
         <li v-for="(item, index) in alarm" :key="index">
-          <span>{{index + 1}}</span>
+          <!-- <span>{{index + 1}}</span> -->
           <span>{{item.alarmAddress}}</span>
           <span>{{item.alarmDesc}}</span>
+          <span>{{item.time}}</span>
         </li>
       </ul>
   </div>

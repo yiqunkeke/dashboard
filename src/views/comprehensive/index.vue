@@ -4,7 +4,9 @@
         <!-- 天气 -->
         <weatherComp :weather="weather" style="flex: 0.5"/>
         <!-- 电/水力监控 -->
-        <electricComp :electric="electric" :water="water" style="flex:2"/>
+        <!-- <electricComp :electric="electric" :water="water" style="flex:2"/> -->
+        <!-- 当日营收额 -->
+        <dayIncomeComp/>
         <!-- 海草屋客房统计 -->
         <seaweedComp :seawead="seawead" style="flex:2"/>
         <!-- 拖挂房车客房统计 -->
@@ -18,7 +20,9 @@
       </el-col>
       <el-col :span="6">
         <!-- 活动情况预测 -->
-        <activityComp :activity="activity"/>
+        <!-- <activityComp :activity="activity"/> -->
+        <!-- 电/水力监控 -->
+        <electricComp :electric="electric" :water="water"/>
         <!-- 人员统计 -->
         <peopleComp :people="people" :equipment="equipment"/>
         <!-- 当月营收 -->
@@ -37,6 +41,7 @@ import peopleComp from './comp/people'
 import activityComp from './comp/activity'
 import incomeComp from './comp/income'
 import incomeMonthComp from './comp/monthIncome'
+import dayIncomeComp from './comp/dayIncome'
 import { weatherData, electricData, waterData, roomData, powerTotal, peopleData, equipmentData, activityData, incomeData } from '@/api/comprehensive'
 export default {
   components: {
@@ -48,7 +53,8 @@ export default {
     peopleComp,
     activityComp,
     incomeComp,
-    incomeMonthComp
+    incomeMonthComp,
+    dayIncomeComp
   },
   data () {
     return {

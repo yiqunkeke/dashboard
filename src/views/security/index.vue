@@ -57,7 +57,7 @@ export default {
       camera: {},
       dynamic: [],
       cameraOnline: {},
-      behavior: {},
+      behavior: [],
       video: []
     }
   },

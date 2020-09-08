@@ -2,7 +2,7 @@
   <el-row :gutter="20">
       <el-col :span="6">
         <!-- 今日工单各维度统计 -->
-        <workOrderComp :workOrder="workOrder"/>
+        <workOrderComp :workOrder="workOrder" :serveOrder="serveOrder"/>
         <!-- 报修设备占比 -->
         <equipRatioComp :equipRatio="equipRatioData"/>
       </el-col>
@@ -31,7 +31,7 @@ import listComp from './comp/list'
 import stateComp from './comp/state'
 import taskRatioComp from './comp/taskRatio'
 import boardComp from './comp/board'
-import { workOrderStatistic, equipRatio, equipAlarmAnalysis, operationList, stateAnalysis, taskRatio, totalStatistic, totalPosition } from '@/api/operation'
+import { workOrderStatistic, equipRatio, equipAlarmAnalysis, operationList, stateAnalysis, taskRatio, totalStatistic, totalPosition, serviceOrderStatistic } from '@/api/operation'
 export default {
   components: {
     workOrderComp,
@@ -45,6 +45,7 @@ export default {
   data () {
     return {
       workOrder: {},
+      serveOrder: {},
       equipRatioData: {},
       analysis: [],
       list: [],
@@ -56,6 +57,7 @@ export default {
   },
   mounted () {
     this.getWorkOrder()
+    this.getServeOrder()
     this.getEquipmentRatio()
     this.getAnalysis()
     this.getList()
@@ -68,6 +70,10 @@ export default {
     // 今日工单各维度统计
     async getWorkOrder () {
       this.workOrder = await workOrderStatistic()
+    },
+    // 今日工单各维度统计-服务类
+    async getServeOrder () {
+      this.serveOrder = await serviceOrderStatistic()
     },
     // 报修设备占比
     async getEquipmentRatio () {
