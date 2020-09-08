@@ -78,10 +78,12 @@ export default {
       display: flex;
       justify-content: space-between;
       margin: .1rem .2rem .1rem;
+      height: 50%;
       .inner {
         display: flex;
         align-items: center;
         flex-direction: column;
+        justify-content: center;
         p {
           font-size: .28rem;
           color: $yellow;

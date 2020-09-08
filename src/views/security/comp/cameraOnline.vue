@@ -10,7 +10,7 @@
       </h1>
       <!-- {{cameraOnline}} -->
       <div class="chart">
-        <div ref="chart" :style="{width: '100%', height: '100%'}"></div>
+        <div ref="chart" :style="{width: '90%', height: '100%'}"></div>
       </div>
   </div>
 </template>

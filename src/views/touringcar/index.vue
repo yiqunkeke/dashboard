@@ -109,7 +109,9 @@ export default {
         }],
         value: 'C0847DB6F000',
         equipments: [],
-        modes: []
+        modes: [],
+        timer: null,
+        timer2: null
 		}
   },
   watch: {
@@ -126,13 +128,18 @@ export default {
     this.getEquipment()
     this.getMode()
   },
+  destroyed() {
+    // console.log('destroy')
+    window.clearInterval(this.timer)
+    window.clearInterval(this.timer2)
+  },
  	methods: {
      //根据房车-房间获取设备
      async getEquipment() {
        this.equipments = await tcarEquipment({
             carNum: 'C0847DB6F000'
           })
-       setInterval(async () => { 
+       this.timer = setInterval(async () => { 
           this.equipments = await tcarEquipment({
             carNum: 'C0847DB6F000'
           })
@@ -143,7 +150,7 @@ export default {
        this.modes = await tcarMode({
             carNum: 'C0847DB6F000'
        })
-       setInterval(async () => { 
+       this.timer2 = setInterval(async () => { 
           this.modes = await tcarMode({
             carNum: 'C0847DB6F000'
           })
@@ -180,6 +187,7 @@ export default {
 .select {
   width: 3rem;
   margin-bottom: .15rem;
+  // flex: 1;
 }
 ::v-deep .el-table {
       background-color: transparent;

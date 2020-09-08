@@ -5,7 +5,7 @@
       </h1>
       <!-- {{video}} -->
       <div class="video-wrapper">
-        <video controls v-for="(item, index) in video" :key="index" class="video">
+        <video controls v-for="(item, index) in video" :key="index" class="video" autoplay="autoplay" loop="loop">
           <source :src="item" type="video/mp4">
         您的浏览器不支持Video标签。
         </video>
@@ -36,8 +36,9 @@ export default {
   .video {
     margin-right: .15rem;
     margin-bottom: .15rem;
-    width: .9rem;
-    height: .5rem;
+    width: 1.1rem;
+    height: .9rem;
+    object-fit:fill;
   }
 }
 </style>

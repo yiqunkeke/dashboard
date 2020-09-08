@@ -10,7 +10,7 @@
       </h1>
       <!-- {{onlineStatus}} -->
       <div class="box-wrapper">
-        <div ref="chart2" :style="{width: '100%', height: '100%'}"></div>
+        <div ref="chart2" :style="{width: '90%', height: '100%'}"></div>
       </div>
   </div>
 </template>
@@ -65,10 +65,10 @@ export default {
             formatter: '{a} <br/>{b} : {c} ({d}%)',
             transitionDuration:0,//echart防止tooltip的抖动
           },
-          color: ['#ffd074', '#00deff', '#0080f8', '#1b51ff', '#2a00ff', '#518ddf'],
+          color: ['#ffd074', '#00deff', '#0080f8', '#1b51ff', '#1b9eff', '#518ddf'],
           legend: {
             orient: 'vertical',
-            right: 10,
+            right: 0,
             top: 10,
             data: this.xDataCircle,
             textStyle: {
@@ -83,7 +83,7 @@ export default {
               name: '消防设备在线情况',
               type: 'pie',
               radius: ['50%', '75%'],
-              // center: ['50%', '60%'],
+              center: ['50%', '50%'],
               data: this.seriesDataCircle,
               emphasis: {
                 itemStyle: {

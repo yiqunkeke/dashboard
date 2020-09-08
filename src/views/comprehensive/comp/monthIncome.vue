@@ -70,7 +70,7 @@ export default {
             transitionDuration:0,//echart防止tooltip的抖动
           },
           // color: ['#409eff', '#4fcb74', '#fbd438', '#f04864', '#9860e5', '#37cbcb', '#37a2da', '#e7bcf3', '#8378ea', '#96bfff', '#ff9f7f'],
-          color: ['#ffd074', '#00deff', '#0080f8', '#1b51ff', '#2a00ff', '#518ddf'],
+          color: ['#ffd074', '#00deff', '#0080f8', '#1b51ff', '#00e9db', '#518ddf'],
           legend: {
             orient: 'vertical',
             right: 10,

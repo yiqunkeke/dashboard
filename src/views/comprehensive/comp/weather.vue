@@ -7,11 +7,15 @@
   <div class="box">
       <div class="box-wrapper">
         <p>
-          <span>温度：</span><em>{{wea.temperature}}</em><span>℃</span>
+          <span>{{wea.type}}</span>
         </p>
         <p>
-        <span>湿度：</span><em>{{wea.humidity}}</em><span>%</span>
+          <span>温度：</span><em>{{wea.low}}~{{wea.high}}</em>
         </p>
+        <p>
+        <span>湿度：</span><em>{{wea.humidity}}</em>
+        </p>
+        
       </div>
   </div>
 </template>
@@ -44,7 +48,9 @@ export default {
   .box-wrapper {
       display: flex;
       justify-content: space-between;
+      align-items: center;
       padding: .1rem .3rem;
+      height: 100%;
       p {
         font-size:0.12rem;
         color: $white;
@@ -52,7 +58,7 @@ export default {
         display: flex;
         align-items: center;
         em {
-          font-size: .3rem;
+          // font-size: .2rem;
           color: $white;
           font-family: Arial, Helvetica, sans-serif;
           font-style: normal;

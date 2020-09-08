@@ -81,7 +81,7 @@ export default {
           },
           legend: {
             orient: 'vertical',
-            right: 10,
+            right: 0,
             top: 10,
             data: this.xData,
             textStyle: {
@@ -97,7 +97,7 @@ export default {
               name: '人脸底库',
               type: 'pie',
               radius: ['50%', '75%'],
-              // center: ['50%', '60%'],
+              center: ['50%', '50%'],
               avoidLabelOverlap: false,
               label: {
                 show: false,
@@ -138,7 +138,7 @@ export default {
           color: ['#f28413', '#0282ff'],
           legend: {
             orient: 'vertical',
-            right: 10,
+            right: 0,
             top: 10,
             data: this.xData,
             textStyle: {
@@ -153,7 +153,7 @@ export default {
               name: '车牌底库',
               type: 'pie',
               radius: ['50%', '75%'],
-              // center: ['50%', '60%'],
+              center: ['50%', '50%'],
               avoidLabelOverlap: false,
               label: {
                 show: false,
