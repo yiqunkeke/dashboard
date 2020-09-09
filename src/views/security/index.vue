@@ -11,14 +11,14 @@
       <el-col :span="12">
         <!-- 中间统计 -->
        <boardComp :people="people" :camera="camera"/>
-       <!-- 动态 -->
-       <dynamiComp :dynamic="dynamic"/>
+       <!-- 行为统计 -->
+        <behaveComp :behavior="behavior"/>
       </el-col>
       <el-col :span="6">
         <!-- 视频监控 -->
         <videoComp :video="video"/>
-        <!-- 行为统计 -->
-        <behaveComp :behavior="behavior"/>
+        <!-- 动态 -->
+       <dynamiComp :dynamic="dynamic"/>
         <!-- 摄像头在线情况 -->
         <cameraComp :cameraOnline="cameraOnline"/>
       </el-col>

@@ -14,7 +14,7 @@
           <em>{{statistic.alarmTotal}}</em>
         </div>
         <div class="block">
-          <span>响应<br/>时长</span>
+          <span>系统<br/>响应</span>
           <em>{{statistic.arriveTimeTotal}}</em>
         </div>
         <div class="block">

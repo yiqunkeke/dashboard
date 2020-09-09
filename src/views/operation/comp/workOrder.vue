@@ -110,6 +110,7 @@ export default {
               name: '工程类工单',
               type: 'pie',
               radius: ['50%', '75%'],
+              center: ['50%', '60%'],
               data: this.seriesDataCircle,
               emphasis: {
                 itemStyle: {
@@ -166,7 +167,7 @@ export default {
               name: '服务类工单',
               type: 'pie',
               radius: ['50%', '75%'],
-              center: ['50%', '50%'],
+              center: ['50%', '60%'],
               avoidLabelOverlap: false,
               label: {
                 show: false,

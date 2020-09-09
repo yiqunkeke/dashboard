@@ -5,9 +5,15 @@
       </h1>
       <!-- {{video}} -->
       <div class="video-wrapper">
-        <video controls v-for="(item, index) in video" :key="index" class="video" autoplay="autoplay" loop="loop">
+        <video v-for="(item, index) in video" :key="index" class="video" 
+          autoplay="autoplay"
+          loop="loop" 
+          muted="false"
+          controlslist="nodownload  nofullscreen noremoteplayback"
+          oncontextmenu = "return false"
+          ref="video">
           <source :src="item" type="video/mp4">
-        您的浏览器不支持Video标签。
+            您的浏览器不支持Video标签。
         </video>
       </div>
   </div>
@@ -22,6 +28,10 @@ export default {
         return []
       }
     }
+  },
+  mounted() {
+    console.log(this.$refs.video)
+    // this.$refs.video[0]['disablePictureInPicture'] = true
   }
 }
 </script>

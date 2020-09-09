@@ -370,7 +370,7 @@ export default {
               name: '房车模式使用次数',
               type: 'pie',
               radius: ['50%', '75%'],
-              center: ['50%', '50%'],
+              center: ['35%', '50%'],
               data: this.seriesDataCircle2,
               emphasis: {
                 itemStyle: {

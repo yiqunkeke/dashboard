@@ -8,14 +8,14 @@
       <!-- {{power}} -->
       <div class="box-wrapper">
         <div class="month total">
-          <h2>园区入口</h2>
+          <h2>营地入口</h2>
           <div class="line">
             <div class="inner">
-              <span>进入园区人数</span>
+              <span>进入营地人数</span>
               <p><em>{{people.enterParkPeople}}</em>人</p>
             </div>
             <div class="inner">
-              <span>离开园区人数</span>
+              <span>离开营地人数</span>
               <p><em>{{people.leaveParkPeople}}</em>人</p>
             </div>
             <div class="inner mgb0">
