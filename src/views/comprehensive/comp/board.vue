@@ -2,7 +2,7 @@
   <div class="box">
       <!-- {{power}} -->
       <div class="box-wrapper">
-        <div class="month">
+        <!-- <div class="month">
           <h2>抄表系统</h2>
           <div class="line">
             <div class="inner">
@@ -31,7 +31,7 @@
               <p><em>{{power.powerTotal}}</em>度</p>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
   </div>
 </template>

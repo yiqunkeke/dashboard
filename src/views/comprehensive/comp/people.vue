@@ -11,29 +11,29 @@
       <div class="box-wrapper">
           <div class="inner">
             <p>{{peo.enterParkPeople}}</p>
-            <span>进入园区人数</span>
+            <span>今日入园人数</span>
           </div>
           <div class="inner">
-            <p>{{peo.todayRegisterPeople}}</p>
-            <span>今日登记人数</span>
+            <p>{{peo.nowPeople}}</p>
+            <span>当前在园人数</span>
           </div>
           <div class="inner">
-            <p>{{peo.leaveParkPeople}}</p>
-            <span>离开园区人数</span>
+            <p>{{peo.peopleTotal}}</p>
+            <span>累计入园人数</span>
           </div>
       </div>
       <div class="box-wrapper">
           <div class="inner">
             <p>{{equip.touringcarNum}}</p>
-            <span>房车数</span>
+            <span>空余水电桩</span>
           </div>
           <div class="inner">
             <p>{{equip.emptyParking}}</p>
-            <span>空车位</span>
+            <span>空余充电桩</span>
           </div>
           <div class="inner">
             <p>{{equip.monitoringBuildNum}}</p>
-            <span>监控楼数</span>
+            <span>空余停车位</span>
           </div>
       </div>
   </div>

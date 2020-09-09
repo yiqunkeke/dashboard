@@ -8,39 +8,44 @@
         <el-table :data="listData" stripe tooltip-effect="light">
                 <el-table-column
                     prop="equipmentCode"
-                    label="设备编号"
-                    width="90">
+                    label="编号"
+                    width="50">
+                </el-table-column>
+                <el-table-column
+                    prop="orderType"
+                    width="70"
+                    label="工单类型">
                 </el-table-column>
                 <el-table-column
                     prop="equipmentName"
                     show-overflow-tooltip
-                    label="设备名称">
+                    label="内容">
                 </el-table-column>
                 <el-table-column
                     prop="repairman"
-                    label="报修人"
-                    width="80">
+                    label="提报人"
+                    width="60">
                 </el-table-column>
                 <el-table-column
                     prop="currentState"
                     label="当前状态"
-                    width="90">
+                    width="60">
                 </el-table-column>
                 <el-table-column
                     prop="repairTime"
-                    label="报修时间"
+                    label="响应时间"
                     show-overflow-tooltip
-                    width="100">
+                    width="120">
                 </el-table-column>
                 <el-table-column
                     prop="maintenanceMan"
-                    label="维修员"
-                    width="80">
+                    label="处理人"
+                    width="60">
                 </el-table-column>
                 <el-table-column
                     prop="faultLevel"
-                    label="故障等级"
-                    width="90">
+                    label="等级"
+                    width="60">
                 </el-table-column>
                 <el-table-column
                     prop="duration"

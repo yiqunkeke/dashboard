@@ -5,13 +5,9 @@
         <div class="month total">
           <h2>{{totalPos.position}}</h2>
           <div class="line">
-            <div class="inner">
-              <span>{{totalPos.listOrders[0].desc}}</span>
-              <p><em>{{totalPos.listOrders[0].value}}</em></p>
-            </div>
-            <div class="inner">
-              <span>{{totalPos.listOrders[1].desc}}</span>
-              <p><em>{{totalPos.listOrders[1].value}}</em></p>
+            <div class="inner" v-for="(item, index) in totalPos.listOrders" :key="index">
+              <span>{{item.desc}}</span>
+              <p><em>{{item.value}}</em></p>
             </div>
           </div>
         </div>

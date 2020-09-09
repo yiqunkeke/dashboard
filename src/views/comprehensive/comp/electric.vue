@@ -6,7 +6,7 @@
 <template>
   <div class="box">
       <h1>
-        <span>全国电/水力监控</span>
+        <span>营地电/水力监控</span>
       </h1>
       <div class="box-wrapper">
         <div class="inner">

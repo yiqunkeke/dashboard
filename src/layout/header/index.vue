@@ -7,7 +7,7 @@
         </div>
       </el-col>
       <el-col :span="8" class="slogan">
-        智慧营地大数据看板
+        智慧营地大数据中心
       </el-col>
       <el-col :span="8" class="header-right">
         <el-dropdown @command="handleCommand">

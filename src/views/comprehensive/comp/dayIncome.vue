@@ -10,7 +10,7 @@
       </h1>
       <div class="box-wrapper">
         <div class="inner">
-          <p>276.78</p>
+          <p>51.2</p>
           <span>万元</span>
         </div>
       </div>
@@ -53,17 +53,18 @@ export default {
 <style lang="scss" scoped>
   @import '~@/assets/styles/box.scss';
   .box-wrapper {
-      display: flex;
-      justify-content: space-between;
+      // display: flex;
+      // justify-content: space-between;
       margin: .1rem .2rem .1rem;
-      height: 50%;
+      height: 100%;
       .inner {
         display: flex;
         align-items: center;
         // flex-direction: column;
         justify-content: center;
+        height: 100%;
         p {
-          font-size: .28rem;
+          font-size: .36rem;
           color: $yellow;
           margin: 0;
           font-family: Arial, Helvetica, sans-serif;

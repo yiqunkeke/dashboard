@@ -7,10 +7,13 @@
   <div class="box">
       <div class="box-wrapper">
         <p>
+          <span>{{wea.date}}</span>
+        </p>
+        <p>
           <span>{{wea.type}}</span>
         </p>
         <p>
-          <span>温度：</span><em>{{wea.low}}~{{wea.high}}</em>
+          <em>{{wea.low}}~{{wea.high}}</em>
         </p>
         <p>
         <span>湿度：</span><em>{{wea.humidity}}</em>
@@ -32,7 +35,8 @@ export default {
   },
   data () {
     return {
-      wea: this.weather
+      wea: this.weather,
+      date: null
     }
   },
   watch: {

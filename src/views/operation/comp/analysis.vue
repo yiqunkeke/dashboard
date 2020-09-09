@@ -22,14 +22,14 @@
                 <el-table-column
                     prop="repairNum"
                     label="次数"
-                    width="80">
+                    width="100">
                 </el-table-column>
-                <el-table-column
+                <!-- <el-table-column
                     prop="increase"
                     label="涨幅"
                     width="80"
                     sortable>
-                </el-table-column>
+                </el-table-column> -->
         </el-table>
       </div>
   </div>

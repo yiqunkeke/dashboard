@@ -58,6 +58,7 @@ export default {
         }
         span {
           text-align: left;
+          width: 33%;
         }
       }
     }

@@ -9,7 +9,7 @@
         行为统计
       </h1>
       <!-- {{behavior}} -->
-      <el-table :data="behave" stripe>
+      <el-table :data="behave" stripe :cell-class-name="cellClass">
           <el-table-column
               prop="area"
               label="区域"
@@ -47,6 +47,15 @@ export default {
     behavior (val) {
       this.behave = val
     }
+  },
+  methods: {
+    cellClass({row, column, rowIndex, columnIndex}) {
+      // console.log(111, row)
+      if((row.behavior=='区域入侵'&&columnIndex==1) || (row.behavior =='离开报警'&&columnIndex==1)) {
+        // console.log(222)
+        return 'cellRed'
+      }
+    }
   }
 }
 </script>
@@ -74,6 +83,10 @@ export default {
       td, th {
         padding: .08rem;
         font-size: .12rem;
+      }
+      td.cellRed {
+        // color: $yellow;
+        color: red;
       }
     }
     .el-table::before {

@@ -14,17 +14,17 @@
           <em>{{statistic.alarmTotal}}</em>
         </div>
         <div class="block">
-          <span>到场<br/>用时</span>
+          <span>响应<br/>时长</span>
           <em>{{statistic.arriveTimeTotal}}</em>
         </div>
         <div class="block">
           <span>火灾<br/>数</span>
           <em>{{statistic.fireHazardNum}}</em>
         </div>
-        <div class="block">
+        <!-- <div class="block">
           <span>火警<br/>隐患</span>
           <em>{{statistic.fireNum}}</em>
-        </div>
+        </div> -->
         <div class="block">
           <span>设备<br/>完好</span>
           <em>{{statistic.equipmentGoodRate}}</em>
