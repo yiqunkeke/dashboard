@@ -13,12 +13,12 @@
           <el-table-column
               prop="area"
               label="区域"
-              width="120">
+              width="90">
           </el-table-column>
           <el-table-column
               prop="behavior"
               label="行为"
-              width="120">
+              width="110">
           </el-table-column>
           <el-table-column
               prop="time"

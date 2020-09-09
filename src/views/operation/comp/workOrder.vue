@@ -8,8 +8,14 @@
         <div ref="chart" :style="{width: '100%', height: '100%'}"></div>
       </div> -->
       <div class="box-wrapper">
-        <div ref="chart" :style="{width: '50%', height: '100%'}"></div>
-        <div ref="chart2" :style="{width: '50%', height: '100%'}"></div>
+        <div class="inner">
+          <div ref="chart" :style="{width: '100%', height: '80%'}"></div>
+          <p>工程类工单</p>
+        </div>
+        <div class="inner">
+          <div ref="chart2" :style="{width: '100%', height: '80%'}"></div>
+          <p>服务类工单</p>
+        </div>
       </div>
   </div>
 </template>
@@ -83,6 +89,7 @@ export default {
           tooltip: {
             trigger: 'item',
             formatter: '{a} <br/>{b} : {c} ({d}%)',
+            confine: true,
             transitionDuration:0,//echart防止tooltip的抖动
           },
           color: ['#ffd074', '#00deff', '#0080f8', '#1b51ff', '#2a00ff', '#518ddf'],
@@ -112,48 +119,8 @@ export default {
                 }
               },
               label: {
-                // formatter: '{a|{a}}{abg|}\n{hr|}\n  {b|{b}：}{c}  {per|{d}%}  ',
-                // formatter: '{per|{d}%}',
-                formatter: '{c}',
-                // backgroundColor: '#09153f',
-                // borderColor: '#00fcf9',
-                // borderWidth: 1,
-                // borderRadius: 4,
-                // shadowBlur:3,
-                // shadowOffsetX: 2,
-                // shadowOffsetY: 2,
-                // shadowColor: '#999',
-                // padding: [0, 7],
-                rich: {
-                //   a: {
-                //     color: '#999',
-                //     lineHeight: 22,
-                //     align: 'center'
-                //   },
-                  // abg: {
-                  //     backgroundColor: '#333',
-                  //     width: '100%',
-                  //     align: 'right',
-                  //     height: 22,
-                  //     borderRadius: [4, 4, 0, 0]
-                  // },
-                //   hr: {
-                //     borderColor: '#aaa',
-                //     width: '100%',
-                //     borderWidth: 0.5,
-                //     height: 0
-                //   },
-                //   b: {
-                //     fontSize: 12,
-                //     lineHeight: 33
-                //   },
-                  per: {
-                    color: '#00fcf9'
-                    // backgroundColor: '#09153f',
-                    // padding: [2, 4],
-                    // borderRadius: 2
-                  }
-                }
+                show: false,
+                position: 'center'
               }
             }
           ]
@@ -178,7 +145,8 @@ export default {
           tooltip: {
             trigger: 'item',
             formatter: '{a} <br/>{b} : {c} ({d}%)',
-            position: 'inside'
+            position: 'inside',
+            confine: true
           },
           color: ['#ffd074', '#00deff', '#0080f8', '#1b51ff', '#2a00ff', '#518ddf'],
           legend: {
@@ -213,48 +181,8 @@ export default {
                 }
               },
               label: {
-                // formatter: '{a|{a}}{abg|}\n{hr|}\n  {b|{b}：}{c}  {per|{d}%}  ',
-                // formatter: '{per|{d}%}',
-                formatter: '{c}',
-                // backgroundColor: '#09153f',
-                // borderColor: '#00fcf9',
-                // borderWidth: 1,
-                // borderRadius: 4,
-                // shadowBlur:3,
-                // shadowOffsetX: 2,
-                // shadowOffsetY: 2,
-                // shadowColor: '#999',
-                // padding: [0, 7],
-                rich: {
-                //   a: {
-                //     color: '#999',
-                //     lineHeight: 22,
-                //     align: 'center'
-                //   },
-                  // abg: {
-                  //     backgroundColor: '#333',
-                  //     width: '100%',
-                  //     align: 'right',
-                  //     height: 22,
-                  //     borderRadius: [4, 4, 0, 0]
-                  // },
-                //   hr: {
-                //     borderColor: '#aaa',
-                //     width: '100%',
-                //     borderWidth: 0.5,
-                //     height: 0
-                //   },
-                //   b: {
-                //     fontSize: 12,
-                //     lineHeight: 33
-                //   },
-                  per: {
-                    color: '#00fcf9'
-                    // backgroundColor: '#09153f',
-                    // padding: [2, 4],
-                    // borderRadius: 2
-                  }
-                }
+                show: false,
+                position: 'center'
               }
             }
           ]
@@ -279,5 +207,16 @@ export default {
 .box-wrapper {
     display: flex;
     height: 100%;
+    .inner {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      flex: 1;
+      p {
+        color: #fff;
+        font-size: .18rem;
+      }
+    }
 }
 </style>
