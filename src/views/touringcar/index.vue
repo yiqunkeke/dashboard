@@ -208,7 +208,7 @@ export default {
           this.equipments = await tcarEquipment({
             carNum: 'C0847DB6F000'
           })
-        }, 2000)
+        }, 10000)
      },
     //  获取模式
      async getMode() {
@@ -220,7 +220,7 @@ export default {
             carNum: 'C0847DB6F000'
           })
           console.log('modes', this.modes)
-        }, 2000)
+        }, 10000)
      },
      //  设备图表
      drawLine () {
